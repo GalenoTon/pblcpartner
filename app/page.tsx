@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Users, Target, Lightbulb, Shield, Play, CheckCircle, Award } from "lucide-react"
+import { ArrowRight, Users, Target, Lightbulb, Shield, Play, Award } from "lucide-react"
 import Link from "next/link"
 
 export default function HomePage() {
