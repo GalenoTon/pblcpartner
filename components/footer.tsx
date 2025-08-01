@@ -1,22 +1,26 @@
 import Link from "next/link"
 import { Mail, Phone, MapPin, Linkedin, Instagram } from "lucide-react"
+import Image from 'next/image';
+
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 border-t border-slate-800">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid px-10 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">PP</span>
-              </div>
-              <div>
-                <div className="text-white font-bold text-lg">Public Partner</div>
-                <div className="text-cyan-400 text-xs font-medium">Soluções Inteligentes</div>
-              </div>
-            </Link>
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="relative w-25 h-25">
+              <Image
+                src="/logopartner.png"
+                alt="Logo Public Partner"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </Link>
             <p className="text-slate-300 mb-4 max-w-md">
               Consultoria especializada em Gestão Pública e Privada, com foco em soluções para Projetos de
               Infraestrutura e Tecnologia.
