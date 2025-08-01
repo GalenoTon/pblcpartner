@@ -4,9 +4,8 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Lightbulb, Shield, Target, FileText, Gavel, Building, 
-  ArrowRight, Zap, CheckCircle, Scale, MonitorCheck, 
-  RefreshCw, Eye, Cpu, Leaf, ChevronRight, 
+  Lightbulb, Shield, Target, Gavel, Building, 
+  ArrowRight, Zap, Scale, MonitorCheck, Eye, Cpu, Leaf, ChevronRight, 
   BarChart3, Users, FileStack, Search, Handshake,
   ClipboardCheck, Award, BookOpen, TrendingUp
 } from "lucide-react"

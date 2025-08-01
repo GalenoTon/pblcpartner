@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Users, Award, Target, Lightbulb, MapPin, Calendar, TrendingUp, ArrowRight, Star } from "lucide-react"
+// import { Card, CardContent } from "@/components/ui/card"
+import { Users, Lightbulb, MapPin, Calendar, TrendingUp, ArrowRight, Star } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -257,8 +257,8 @@ export default function SobrePage() {
                   <div className="flex items-start">
                     <Star className="h-6 w-6 text-cyan-400 mt-1 mr-3 flex-shrink-0" />
                     <p className="text-cyan-200 italic font-medium">
-                      "A Public Partner é mais que uma empresa: é uma parceira comprometida com a transformação e o 
-                      fortalecimento institucional."
+                      A Public Partner é mais que uma empresa: é uma parceira comprometida com a transformação e o 
+                      fortalecimento institucional.
                     </p>
                   </div>
                 </div>
