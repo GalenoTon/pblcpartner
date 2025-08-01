@@ -90,7 +90,7 @@ export default function HomePage() {
           className="group bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
           asChild
         >
-          <Link href="/servicos">
+          <Link href="/#">
             Conheça nossos serviços
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -272,7 +272,7 @@ export default function HomePage() {
                       className="group text-cyan-400 hover:text-cyan-300 px-0 hover:bg-transparent"
                       asChild
                     >
-                      <Link href="/servicos">
+                      <Link href="/#">
                         Saiba mais
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
