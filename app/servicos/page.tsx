@@ -37,6 +37,8 @@ export default function ServicosPage() {
     const elements = document.querySelectorAll(".fade-in-section")
     elements.forEach((el) => observerRef.current?.observe(el))
 
+
+
     return () => observerRef.current?.disconnect()
   }, [])
 
@@ -193,8 +195,10 @@ export default function ServicosPage() {
   ]
 
   return (
-    <div className="min-h-screen text-slate-900 overflow-x-hidden">
-      {/* Hero Section - Mesmo padrão da HomePage */}
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-x-hidden">
+      {/* Hero Section */}
+
+
       <section className="relative min-120px flex items-center justify-center overflow-hidden bg-slate-950 text-white px-6 md:px-12 lg:px-16 xl:px-24 py-24">
         <div className="absolute inset-0 z-0">
           <video
@@ -227,24 +231,28 @@ export default function ServicosPage() {
 
         <div className="container mx-auto relative z-10 text-center">
           <div className="max-w-4xl mx-auto fade-in-section opacity-0 transition-all duration-1000">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-slate-950/50 backdrop-blur-sm border border-[#49B5EA]/30 rounded-full mb-8">
+              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Nossa História</span>
+            </div> */}
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-12 font-bold mb-6 leading-tight">
               <span className="block text-white">Nossos </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
-                Serviços
+              Serviços
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-[#C5E8FA] leading-relaxed mb-12 max-w-3xl mx-auto">
-              Transformando desafios institucionais em oportunidades com excelência técnica e estratégica
+            Transformando desafios institucionais em oportunidades com excelência técnica e estratégica
             </p>
             
-            <Link href="#servicos">
+            <Link href="#historia">
               <Button
                 size="lg"
                 className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-[#49B5EA]/25 transition-all duration-300 hover:scale-105"
                 onClick={handleScrollToHistory}
               >
-                Conheça nossos serviços
+                Conheça nossa história
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -252,26 +260,16 @@ export default function ServicosPage() {
         </div>
       </section>
 
-      {/* Nossa Abordagem Section - Fundo branco */}
-      <section className="py-24 px-4 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-250 w-auto max-w-250 object-contain"
-            loading="lazy"
-          />
-        </div>
-
+      {/* Nossa Abordagem Section */}
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-950/50 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.05),transparent_60%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="fade-in-section opacity-0 transition-all duration-1000">
                 <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-3xl blur-2xl opacity-70 animate-pulse" />
-                  <div className="relative bg-white border border-slate-200 rounded-2xl overflow-hidden aspect-video shadow-xl">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-3xl blur-2xl opacity-70 animate-pulse" />
+                  <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden aspect-video">
                     <Image
                       src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                       alt="Abordagem Public Partner"
@@ -283,18 +281,18 @@ export default function ServicosPage() {
               </div>
 
               <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300">
-                <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/30 rounded-full mb-8">
-                  <ClipboardCheck className="h-4 w-4 text-[#49B5EA] mr-2" />
-                  <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">
+                <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/30 rounded-full mb-8 backdrop-blur-sm">
+                  <ClipboardCheck className="h-4 w-4 text-cyan-400 mr-2" />
+                  <span className="text-sm font-medium text-cyan-400 tracking-wider uppercase">
                     Nossa Abordagem
                   </span>
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                   Excelência técnica com resultados concretos
                 </h2>
 
-                <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+                <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                   <p>
                     Na Public Partner, desenvolvemos soluções sob medida para o setor público e privado, com foco na excelência técnica, na legalidade dos processos e na busca contínua por resultados concretos.
                   </p>
@@ -304,32 +302,32 @@ export default function ServicosPage() {
                 </div>
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                  <div className="flex items-start bg-white border border-[#49B5EA]/20 rounded-xl p-4 shadow-sm">
-                    <Award className="h-5 w-5 text-[#49B5EA] mt-1 mr-3 flex-shrink-0" />
+                  <div className="flex items-start bg-slate-900/50 border border-slate-800 rounded-xl p-4">
+                    <Award className="h-5 w-5 text-cyan-400 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1">Foco na Excelência</h4>
-                      <p className="text-sm text-slate-600">Padrões elevados de qualidade em todas as entregas</p>
+                      <h4 className="font-bold text-white mb-1">Foco na Excelência</h4>
+                      <p className="text-sm text-slate-300">Padrões elevados de qualidade em todas as entregas</p>
                     </div>
                   </div>
-                  <div className="flex items-start bg-white border border-[#49B5EA]/20 rounded-xl p-4 shadow-sm">
-                    <Scale className="h-5 w-5 text-[#7ACCF4] mt-1 mr-3 flex-shrink-0" />
+                  <div className="flex items-start bg-slate-900/50 border border-slate-800 rounded-xl p-4">
+                    <Scale className="h-5 w-5 text-teal-400 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1">Conformidade Legal</h4>
-                      <p className="text-sm text-slate-600">Soluções alinhadas com a legislação vigente</p>
+                      <h4 className="font-bold text-white mb-1">Conformidade Legal</h4>
+                      <p className="text-sm text-slate-300">Soluções alinhadas com a legislação vigente</p>
                     </div>
                   </div>
-                  <div className="flex items-start bg-white border border-[#49B5EA]/20 rounded-xl p-4 shadow-sm">
-                    <TrendingUp className="h-5 w-5 text-[#49B5EA] mt-1 mr-3 flex-shrink-0" />
+                  <div className="flex items-start bg-slate-900/50 border border-slate-800 rounded-xl p-4">
+                    <TrendingUp className="h-5 w-5 text-cyan-400 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1">Resultados Mensuráveis</h4>
-                      <p className="text-sm text-slate-600">Métricas claras de desempenho e impacto</p>
+                      <h4 className="font-bold text-white mb-1">Resultados Mensuráveis</h4>
+                      <p className="text-sm text-slate-300">Métricas claras de desempenho e impacto</p>
                     </div>
                   </div>
-                  <div className="flex items-start bg-white border border-[#49B5EA]/20 rounded-xl p-4 shadow-sm">
-                    <BookOpen className="h-5 w-5 text-[#7ACCF4] mt-1 mr-3 flex-shrink-0" />
+                  <div className="flex items-start bg-slate-900/50 border border-slate-800 rounded-xl p-4">
+                    <BookOpen className="h-5 w-5 text-teal-400 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1">Baseado em Evidências</h4>
-                      <p className="text-sm text-slate-600">Decisões fundamentadas em dados e melhores práticas</p>
+                      <h4 className="font-bold text-white mb-1">Baseado em Evidências</h4>
+                      <p className="text-sm text-slate-300">Decisões fundamentadas em dados e melhores práticas</p>
                     </div>
                   </div>
                 </div>
@@ -339,33 +337,21 @@ export default function ServicosPage() {
         </div>
       </section>
 
-      {/* Services Grid - Fundo gradiente */}
-      <section className="py-24 px-4 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
-        </div>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-100 w-auto max-w-100 object-contain"
-            loading="lazy"
-          />
-        </div>
-
+      {/* Services Grid */}
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-900/50 to-slate-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(6,182,212,0.05),transparent_60%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-16">
-            <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Áreas de Atuação</span>
+            <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/30 rounded-full mb-8 backdrop-blur-sm">
+              <span className="text-sm font-medium text-cyan-400 tracking-wider uppercase">Áreas de Atuação</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Soluções Especializadas para </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
+              <span className="text-white">Soluções Especializadas para </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
                 Desafios Complexos
               </span>
             </h2>
-            <p className="text-lg text-slate-700 max-w-3xl mx-auto">
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
               Confira as principais áreas em que atuamos para transformar desafios em oportunidades
             </p>
           </div>
@@ -374,25 +360,25 @@ export default function ServicosPage() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className={`fade-in-section opacity-0 transition-all duration-1000 bg-white/80 backdrop-blur-sm border border-slate-200 hover:border-[#49B5EA]/50 group hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/10 h-full`}
+                className={`fade-in-section opacity-0 transition-all duration-1000 bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-cyan-400/50 group hover:scale-[1.02] hover:-translate-y-2 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/10 h-full`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-8 h-full flex flex-col">
                   <div
                     className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${service.color} ${service.hoverColor} rounded-2xl mb-8 group-hover:scale-110 transition-all duration-300`}
                   >
-                    <div className="text-[#49B5EA] group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-cyan-400 group-hover:scale-110 transition-transform duration-300">
                       {service.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-slate-900 group-hover:text-[#49B5EA] transition-colors duration-300">
+                  <h3 className="text-xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed mb-6 flex-grow">{service.description}</p>
+                  <p className="text-slate-300 leading-relaxed mb-6 flex-grow">{service.description}</p>
                   <ul className="space-y-3 mb-8">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-slate-500">
-                        <div className="w-2 h-2 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] rounded-full mr-3 flex-shrink-0" />
+                      <li key={featureIndex} className="flex items-center text-slate-400">
+                        <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full mr-3 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
@@ -400,7 +386,7 @@ export default function ServicosPage() {
                   <div className="mt-auto">
                     <Button
                       variant="link"
-                      className="group p-0 text-[#49B5EA] hover:no-underline"
+                      className="group p-0 text-cyan-400 hover:no-underline"
                       asChild
                     >
                       <Link href="/contato">
@@ -416,31 +402,21 @@ export default function ServicosPage() {
         </div>
       </section>
 
-      {/* Approach Section - Fundo branco */}
-      <section className="py-24 px-4 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-250 w-auto max-w-250 object-contain"
-            loading="lazy"
-          />
-        </div>
-
+      {/* Approach Section */}
+      <section className="py-24 px-4 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(20,184,166,0.05),transparent_60%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-16">
-            <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/30 rounded-full mb-8">
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Nosso Método</span>
+            <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/30 rounded-full mb-8 backdrop-blur-sm">
+              <span className="text-sm font-medium text-cyan-400 tracking-wider uppercase">Nosso Método</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Como Trabalhamos para </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
+              <span className="text-white">Como Trabalhamos para </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
                 Entregar Resultados
               </span>
             </h2>
-            <p className="text-lg text-slate-700 max-w-3xl mx-auto">
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
               Nossa abordagem combina expertise técnica, personalização e compromisso com impacto positivo
             </p>
           </div>
@@ -470,65 +446,52 @@ export default function ServicosPage() {
             ].map((item, index) => (
               <div 
                 key={index}
-                className="fade-in-section opacity-0 transition-all duration-1000 bg-white border border-slate-200 rounded-2xl p-8 hover:border-[#49B5EA]/50 group shadow-lg hover:shadow-xl"
+                className="fade-in-section opacity-0 transition-all duration-1000 bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 group"
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <div className="text-[#49B5EA]">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="text-cyan-400">
                     {item.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-slate-900">{item.title}</h3>
-                <p className="text-slate-600">{item.description}</p>
+                <h3 className="text-xl font-bold mb-4 text-white">{item.title}</h3>
+                <p className="text-slate-300">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Fundo gradiente */}
-      <section className="py-24 px-4 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(73,181,234,0.03)_90%,transparent_100%)]"></div>
-        </div>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-100 w-auto max-w-100 object-contain"
-            loading="lazy"
-          />
-        </div>
-
+      {/* CTA Section */}
+      <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.1),transparent_70%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center fade-in-section opacity-0 transition-all duration-1000">
-            <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Pronto para Transformar?</span>
+            <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/30 rounded-full mb-8 backdrop-blur-sm">
+              <span className="text-sm font-medium text-cyan-400 tracking-wider uppercase">Pronto para Transformar?</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Vamos </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
+              <span className="text-white">Vamos </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
                 Construir Juntos
               </span>
             </h2>
-            <div className="p-6 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/20 rounded-xl mb-12">
+            <div className="p-6 bg-gradient-to-r from-cyan-900/30 to-teal-900/30 border border-cyan-800/50 rounded-xl mb-12">
               <div className="flex items-start">
-                <Users className="h-6 w-6 text-[#49B5EA] mt-1 mr-3 flex-shrink-0" />
-                <p className="text-slate-700 font-medium">
+                <Users className="h-6 w-6 text-cyan-400 mt-1 mr-3 flex-shrink-0" />
+                <p className="text-slate-200 font-medium">
                   Nosso time comercial está preparado para entender suas demandas com profundidade e indicar a solução mais adequada para seu contexto institucional.
                 </p>
               </div>
             </div>
-            <p className="text-xl text-slate-700 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
               Entre em contato e converse com um dos nossos especialistas
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 size="lg"
-                className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-10 py-6 text-lg font-semibold shadow-xl hover:shadow-[#49B5EA]/30 hover:scale-105 transition-all duration-300"
+                className="group bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white px-10 py-6 text-lg font-semibold shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 transition-all duration-300"
                 asChild
               >
                 <Link href="/contato">
@@ -539,7 +502,7 @@ export default function ServicosPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="group border-2 border-[#49B5EA]/50 text-[#49B5EA] hover:bg-[#49B5EA] hover:text-white px-10 py-6 text-lg font-semibold bg-white/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
+                className="group border-2 border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-slate-950 px-10 py-6 text-lg font-semibold bg-slate-950/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
                 asChild
               >
                 <Link href="/contato">
