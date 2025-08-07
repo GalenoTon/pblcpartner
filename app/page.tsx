@@ -255,7 +255,7 @@ export default function HomePage() {
                     style={{ backgroundImage: `url(${service.bgImage})` }}
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br from-[#49B5EA]/100 to-[#2C9CDB]/80 
-                      group-hover:from-[#49B5EA]/70 group-hover:to-[#2C9CDB]/80 transition-all duration-700 ease-out`}></div>
+                      group-hover:from-[#49B5EA]/100 group-hover:to-[#2C9CDB]/80 transition-all duration-700 ease-out`}></div>
                   </div>
 
                   <CardContent className="p-6 h-full flex flex-col relative z-10">
