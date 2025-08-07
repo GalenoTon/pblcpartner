@@ -116,9 +116,34 @@ export default function CapacitacaoPage() {
             
             <p className="text-xl md:text-2xl text-[#C5E8FA] leading-relaxed mb-12 max-w-3xl mx-auto">
               Na Public Partner, acreditamos que a transformação da gestão pública começa com o desenvolvimento de
-              pessoas. Oferecemos programas de capacitação especialmente voltados a gestores, técnicos e servidores
-              públicos.
+              pessoas. Por isso, oferecemos programas de capacitação e treinamentos especialmente voltados a gestores, técnicos e servidores públicos, com foco em conteúdo prático, atualizado e customizado conforme as necessidades de cada instituição.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Introdução Section - Fundo branco */}
+      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
+
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
+          <img
+            src="/justlogo.png"
+            alt="Public Partner Logo"
+            className="h-250 w-auto max-w-250 object-contain"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="container mx-auto relative">
+          <div className="max-w-4xl mx-auto fade-in-section opacity-0 transition-all duration-1000">
+            <div className="bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] border border-[#49B5EA]/20 rounded-2xl p-8 md:p-12 shadow-lg">
+              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+                <p>
+                  Nossa proposta vai além da simples transmissão de conhecimento: promovemos a aplicação prática dos temas abordados, utilizando estudos de caso reais, simulações e troca de experiências que agregam valor imediato à rotina dos participantes.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -143,15 +168,15 @@ export default function CapacitacaoPage() {
                 icon: <Users className="h-8 w-8" />,
                 title: "Abordagem Personalizada",
                 description:
-                  "Cada órgão público possui sua própria realidade, desafios e limitações. Nossos cursos são planejados sob medida, a partir de um diagnóstico prévio e alinhamento de expectativas.",
+                  "Cada órgão público possui sua própria realidade, desafios e limitações. Por isso, nossos cursos são planejados sob medida, a partir de um diagnóstico prévio e alinhamento de expectativas. O objetivo é garantir o máximo aproveitamento dos participantes e resultados efetivos para a instituição.",
                 color: "from-blue-500/20 to-indigo-500/20",
                 hoverColor: "hover:from-blue-500/30 hover:to-indigo-500/30",
               },
               {
                 icon: <BookOpen className="h-8 w-8" />,
-                title: "Conteúdo Atualizado",
+                title: "Conteúdo Atualizado e Alinhado às Normas",
                 description:
-                  "Todas as formações seguem as diretrizes das legislações mais recentes, especialmente da Nova Lei de Licitações e Contratos (Lei nº 14.133/2021) e jurisprudência dos Tribunais de Contas.",
+                  "Todas as formações seguem as diretrizes das legislações mais recentes, especialmente da Nova Lei de Licitações e Contratos (Lei nº 14.133/2021), da jurisprudência dos Tribunais de Contas, da LINDB, além das melhores práticas em gestão pública contemporânea.",
                 color: "from-emerald-500/20 to-teal-500/20",
                 hoverColor: "hover:from-emerald-500/30 hover:to-teal-500/30",
               },
@@ -347,7 +372,7 @@ export default function CapacitacaoPage() {
                 <span className="text-sm font-medium text-[#7ACCF4] tracking-wider uppercase">Public Trainer</span>
               </div> */}
               <p className="text-lg text-slate-700 mb-6">
-                Conheça nossa plataforma especializada em capacitação para o setor público
+                Conheça mais sobre nossos cursos acessando:
               </p>
               <Button
                 size="lg"
@@ -356,7 +381,7 @@ export default function CapacitacaoPage() {
                 asChild
               >
                 <a href="https://www.publictrainer.com.br" target="_blank" rel="noopener noreferrer">
-                  Acesse o Public Trainer
+                  www.publictrainer.com.br
                   <ExternalLink className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 </a>
               </Button>
