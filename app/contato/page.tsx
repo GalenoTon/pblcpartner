@@ -325,7 +325,7 @@ export default function ContactPage() {
       </section>
 
       {/* Mapa de Localização */}
-      <section className="py-16 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
+      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="container mx-auto relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000">
             <h2 className="text-3xl font-bold mb-8 text-center text-slate-900">Nossa localização</h2>

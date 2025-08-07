@@ -124,7 +124,7 @@ export default function CapacitacaoPage() {
       </section>
 
       {/* Approach Section - Fundo branco */}
-      <section className="py-24 px-4 bg-white relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
 
         <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
@@ -136,7 +136,7 @@ export default function CapacitacaoPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto relative">
           <div className="grid lg:grid-cols-3 gap-8">
             {[
               {
@@ -189,7 +189,7 @@ export default function CapacitacaoPage() {
       </section>
 
       {/* Topics Section - Fundo gradiente */}
-      <section className="py-24 px-4 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
         </div>
@@ -203,12 +203,12 @@ export default function CapacitacaoPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-20">
-            <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
               <Award className="h-4 w-4 text-[#49B5EA] mr-2" />
               <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Temas Estratégicos</span>
-            </div>
+            </div> */}
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               <span className="text-slate-900">Temas </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
@@ -238,7 +238,7 @@ export default function CapacitacaoPage() {
       </section>
 
       {/* Modalities Section - Fundo branco */}
-      <section className="py-24 px-4 bg-white relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
 
         <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
@@ -250,12 +250,12 @@ export default function CapacitacaoPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-20">
-            <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/30 rounded-full mb-8">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/30 rounded-full mb-8">
               <Monitor className="h-4 w-4 text-[#49B5EA] mr-2" />
               <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Modalidades</span>
-            </div>
+            </div> */}
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               <span className="text-slate-900">Modalidades </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
@@ -291,7 +291,7 @@ export default function CapacitacaoPage() {
       </section>
 
       {/* CTA Section - Fundo gradiente */}
-      <section className="py-24 px-4 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(73,181,234,0.03)_90%,transparent_100%)]"></div>
@@ -306,7 +306,7 @@ export default function CapacitacaoPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
               <span className="text-slate-900">Curso </span>
@@ -321,7 +321,7 @@ export default function CapacitacaoPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button
+              {/* <Button
                 size="lg"
                 className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-[#49B5EA]/30 hover:scale-105 transition-all duration-300"
                 asChild
@@ -330,7 +330,7 @@ export default function CapacitacaoPage() {
                   Solicite um Orçamento
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </Button>
+              </Button> */}
               <Button
                 variant="outline"
                 size="lg"
@@ -342,10 +342,10 @@ export default function CapacitacaoPage() {
             </div>
 
             <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300">
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#7ACCF4]/10 to-[#49B5EA]/10 border border-[#7ACCF4]/30 rounded-full mb-4">
+              {/* <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#7ACCF4]/10 to-[#49B5EA]/10 border border-[#7ACCF4]/30 rounded-full mb-4">
                 <ExternalLink className="h-4 w-4 text-[#7ACCF4] mr-2" />
                 <span className="text-sm font-medium text-[#7ACCF4] tracking-wider uppercase">Public Trainer</span>
-              </div>
+              </div> */}
               <p className="text-lg text-slate-700 mb-6">
                 Conheça nossa plataforma especializada em capacitação para o setor público
               </p>

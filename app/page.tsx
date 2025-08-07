@@ -199,9 +199,9 @@ export default function HomePage() {
 
         <div className="container mx-auto relative">
           <div className="text-center max-w-3xl mx-auto mb-20 fade-in-section opacity-0 transition-all duration-1000">
-            <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-full mb-8 hover:bg-[#49B5EA]/10 hover:border-[#49B5EA]/50 transition-all duration-500 ease-out">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-full mb-8 hover:bg-[#49B5EA]/10 hover:border-[#49B5EA]/50 transition-all duration-500 ease-out">
               <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Nossos Pilares</span>
-            </div>
+            </div> */}
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
               <span>Áreas de </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] hover:bg-gradient-to-l transition-all duration-700 ease-in-out">

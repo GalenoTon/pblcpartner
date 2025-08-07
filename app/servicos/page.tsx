@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { 
-  Lightbulb, Shield, Target, Gavel, Building, 
-  ArrowRight, Zap, Scale, MonitorCheck, Eye, Cpu, Leaf, ChevronRight, 
+import {
+  Lightbulb, Shield, Target, Gavel, Building,
+  ArrowRight, Zap, Scale, MonitorCheck, Eye, Cpu, Leaf, ChevronRight,
   BarChart3, Users, FileStack, Search, Handshake,
   ClipboardCheck, Award, BookOpen, TrendingUp
 } from "lucide-react"
@@ -15,9 +15,9 @@ import Image from "next/image"
 export default function ServicosPage() {
   const observerRef = useRef<IntersectionObserver | null>(null)
 
-  const handleScrollToHistory = (e: React.MouseEvent) => {
+  const handleScrollToService = (e: React.MouseEvent) => {
     e.preventDefault()
-    document.getElementById("historia")?.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("service")?.scrollIntoView({ behavior: "smooth" })
   }
 
   useEffect(() => {
@@ -46,12 +46,12 @@ export default function ServicosPage() {
       title: "Assessoria Técnica Especializada",
       description:
         "Prestamos apoio estratégico e técnico em processos decisórios, com atuação transversal em áreas como contratações públicas, estruturação de políticas públicas, planejamento institucional, regulação e melhoria da governança.",
-      features: [
-        "Contratações públicas",
-        "Estruturação de políticas públicas",
-        "Planejamento institucional",
-        "Regulação e governança",
-      ],
+      // features: [
+      //   "Contratações públicas",
+      //   "Estruturação de políticas públicas",
+      //   "Planejamento institucional",
+      //   "Regulação e governança",
+      // ],
       color: "from-blue-500/20 to-indigo-500/20",
       hoverColor: "hover:from-blue-500/30 hover:to-indigo-500/30",
     },
@@ -60,12 +60,12 @@ export default function ServicosPage() {
       title: "Apoio Técnico ao Setor Público",
       description:
         "Oferecemos suporte contínuo a órgãos da administração direta e indireta, com foco em modernização administrativa, otimização de processos e conformidade normativa.",
-      features: [
-        "Modernização administrativa",
-        "Otimização de processos",
-        "Conformidade normativa",
-        "Suporte contínuo",
-      ],
+      // features: [
+      //   "Modernização administrativa",
+      //   "Otimização de processos",
+      //   "Conformidade normativa",
+      //   "Suporte contínuo",
+      // ],
       color: "from-emerald-500/20 to-teal-500/20",
       hoverColor: "hover:from-emerald-500/30 hover:to-teal-500/30",
     },
@@ -74,12 +74,12 @@ export default function ServicosPage() {
       title: "Concessões e PPPs",
       description:
         "Desenvolvemos estudos, pareceres e minutas contratuais para parcerias público-privadas e concessões, com foco em segurança jurídica, atratividade do projeto e equilíbrio econômico-financeiro.",
-      features: [
-        "Estudos de viabilidade",
-        "Pareceres técnicos",
-        "Minutas contratuais",
-        "Equilíbrio econômico-financeiro",
-      ],
+      // features: [
+      //   "Estudos de viabilidade",
+      //   "Pareceres técnicos",
+      //   "Minutas contratuais",
+      //   "Equilíbrio econômico-financeiro",
+      // ],
       color: "from-purple-500/20 to-pink-500/20",
       hoverColor: "hover:from-purple-500/30 hover:to-pink-500/30",
     },
@@ -88,12 +88,12 @@ export default function ServicosPage() {
       title: "Planos Municipais",
       description:
         "Atuamos na concepção e na avaliação de planos estratégicos municipais, como Planos de Mobilidade Urbana, Saneamento, Resíduos Sólidos, Cultura, Educação e Desenvolvimento Econômico, entre outros.",
-      features: [
-        "Planos de Mobilidade Urbana",
-        "Saneamento e Resíduos",
-        "Cultura e Educação",
-        "Desenvolvimento Econômico",
-      ],
+      // features: [
+      //   "Planos de Mobilidade Urbana",
+      //   "Saneamento e Resíduos",
+      //   "Cultura e Educação",
+      //   "Desenvolvimento Econômico",
+      // ],
       color: "from-orange-500/20 to-red-500/20",
       hoverColor: "hover:from-orange-500/30 hover:to-red-500/30",
     },
@@ -102,12 +102,12 @@ export default function ServicosPage() {
       title: "Planos de Desestatização",
       description:
         "Apoiamos governos municipais e estaduais na estruturação de projetos de desestatização, com foco na eficiência dos serviços públicos, no valor agregado à gestão e no respeito às normativas de controle.",
-      features: [
-        "Projetos de desestatização",
-        "Eficiência dos serviços",
-        "Valor agregado à gestão",
-        "Conformidade normativa",
-      ],
+      // features: [
+      //   "Projetos de desestatização",
+      //   "Eficiência dos serviços",
+      //   "Valor agregado à gestão",
+      //   "Conformidade normativa",
+      // ],
       color: "from-cyan-500/20 to-blue-500/20",
       hoverColor: "hover:from-cyan-500/30 hover:to-blue-500/30",
     },
@@ -116,7 +116,7 @@ export default function ServicosPage() {
       title: "Estudos e Levantamentos Técnicos",
       description:
         "Realizamos diagnósticos, estudos setoriais, levantamentos de campo e análises estratégicas que subsidiam a tomada de decisão em políticas públicas, contratações e reestruturações institucionais.",
-      features: ["Diagnósticos institucionais", "Estudos setoriais", "Levantamentos de campo", "Análises estratégicas"],
+      // features: ["Diagnósticos institucionais", "Estudos setoriais", "Levantamentos de campo", "Análises estratégicas"],
       color: "from-yellow-500/20 to-orange-500/20",
       hoverColor: "hover:from-yellow-500/30 hover:to-orange-500/30",
     },
@@ -125,12 +125,12 @@ export default function ServicosPage() {
       title: "Reequilíbrio Econômico-Financeiro",
       description:
         "Avaliamos e fundamentamos pedidos de reequilíbrio contratual com base em análises técnicas e jurídicas robustas, garantindo a sustentabilidade dos contratos e a equidade entre as partes.",
-      features: [
-        "Análises técnicas e jurídicas",
-        "Sustentabilidade contratual",
-        "Equidade entre partes",
-        "Fundamentação robusta",
-      ],
+      // features: [
+      //   "Análises técnicas e jurídicas",
+      //   "Sustentabilidade contratual",
+      //   "Equidade entre partes",
+      //   "Fundamentação robusta",
+      // ],
       color: "from-rose-500/20 to-pink-500/20",
       hoverColor: "hover:from-rose-500/30 hover:to-pink-500/30",
     },
@@ -139,12 +139,12 @@ export default function ServicosPage() {
       title: "Gerenciamento e Fiscalização de Contratos",
       description:
         "Auxiliamos na estruturação de rotinas de fiscalização, elaboração de relatórios técnicos, análises de conformidade e acompanhamento da execução contratual sob a ótica técnica e normativa.",
-      features: [
-        "Rotinas de fiscalização",
-        "Relatórios técnicos",
-        "Análises de conformidade",
-        "Acompanhamento de execução",
-      ],
+      // features: [
+      //   "Rotinas de fiscalização",
+      //   "Relatórios técnicos",
+      //   "Análises de conformidade",
+      //   "Acompanhamento de execução",
+      // ],
       color: "from-violet-500/20 to-purple-500/20",
       hoverColor: "hover:from-violet-500/30 hover:to-purple-500/30",
     },
@@ -153,12 +153,12 @@ export default function ServicosPage() {
       title: "Verificador Independente",
       description:
         "Atuamos como agente técnico responsável pela verificação de desempenho contratual em projetos de concessões e parcerias, assegurando transparência, rigor técnico e cumprimento de metas pactuadas.",
-      features: [
-        "Verificação de desempenho",
-        "Transparência",
-        "Rigor técnico",
-        "Cumprimento de metas",
-      ],
+      // features: [
+      //   "Verificação de desempenho",
+      //   "Transparência",
+      //   "Rigor técnico",
+      //   "Cumprimento de metas",
+      // ],
       color: "from-lime-500/20 to-emerald-500/20",
       hoverColor: "hover:from-lime-500/30 hover:to-emerald-500/30",
     },
@@ -167,12 +167,12 @@ export default function ServicosPage() {
       title: "Soluções em Tecnologia da Informação",
       description:
         "Apoiamos a transformação digital na administração pública e privada por meio da concepção e implementação de soluções tecnológicas personalizadas, integradas à gestão e à prestação de serviços.",
-      features: [
-        "Transformação digital",
-        "Soluções personalizadas",
-        "Integração à gestão",
-        "Prestação de serviços",
-      ],
+      // features: [
+      //   "Transformação digital",
+      //   "Soluções personalizadas",
+      //   "Integração à gestão",
+      //   "Prestação de serviços",
+      // ],
       color: "from-sky-500/20 to-blue-500/20",
       hoverColor: "hover:from-sky-500/30 hover:to-blue-500/30",
     },
@@ -181,12 +181,12 @@ export default function ServicosPage() {
       title: "Sustentabilidade e Economia Verde",
       description:
         "Elaboramos e acompanhamos projetos voltados à promoção do desenvolvimento sustentável, integrando inovação, responsabilidade ambiental e viabilidade econômica.",
-      features: [
-        "Desenvolvimento sustentável",
-        "Inovação ambiental",
-        "Responsabilidade ambiental",
-        "Viabilidade econômica",
-      ],
+      // features: [
+      //   "Desenvolvimento sustentável",
+      //   "Inovação ambiental",
+      //   "Responsabilidade ambiental",
+      //   "Viabilidade econômica",
+      // ],
       color: "from-green-500/20 to-teal-500/20",
       hoverColor: "hover:from-green-500/30 hover:to-teal-500/30",
     },
@@ -233,27 +233,28 @@ export default function ServicosPage() {
                 Serviços
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-[#C5E8FA] leading-relaxed mb-12 max-w-3xl mx-auto">
               Transformando desafios institucionais em oportunidades com excelência técnica e estratégica
             </p>
-            
+
             <Link href="#servicos">
               <Button
                 size="lg"
-                className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-[#49B5EA]/25 transition-all duration-300 hover:scale-105"
-                onClick={handleScrollToHistory}
+                className="cursor-pointer group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-[#49B5EA]/25 transition-all duration-300 hover:scale-105"
+                onClick={handleScrollToService}
               >
                 Conheça nossos serviços
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
+
           </div>
         </div>
       </section>
 
       {/* Nossa Abordagem Section - Fundo branco */}
-      <section className="py-24 px-4 bg-white relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
 
         <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
@@ -265,7 +266,7 @@ export default function ServicosPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto relative">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="fade-in-section opacity-0 transition-all duration-1000">
@@ -283,12 +284,12 @@ export default function ServicosPage() {
               </div>
 
               <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300">
-                <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/30 rounded-full mb-8">
+                {/* <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/30 rounded-full mb-8">
                   <ClipboardCheck className="h-4 w-4 text-[#49B5EA] mr-2" />
                   <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">
                     Nossa Abordagem
                   </span>
-                </div>
+                </div> */}
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
                   Excelência técnica com resultados concretos
@@ -340,7 +341,7 @@ export default function ServicosPage() {
       </section>
 
       {/* Services Grid - Fundo gradiente */}
-      <section className="py-24 px-4 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden">
+      <section id="service" className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
         </div>
@@ -354,11 +355,11 @@ export default function ServicosPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-16">
-            <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
               <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Áreas de Atuação</span>
-            </div>
+            </div> */}
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               <span className="text-slate-900">Soluções Especializadas para </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
@@ -374,7 +375,7 @@ export default function ServicosPage() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className={`fade-in-section opacity-0 transition-all duration-1000 bg-white/80 backdrop-blur-sm border border-slate-200 hover:border-[#49B5EA]/50 group hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/10 h-full`}
+                className={`fade-in-section opacity-0 transition-all duration-1000 bg-white/80 backdrop-blur-sm border border-slate-200 hover:border-[#49B5EA]/50 group hover:scale-[1.02] hover:-translate-y-2 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/10 h-100`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-8 h-full flex flex-col">
@@ -389,14 +390,14 @@ export default function ServicosPage() {
                     {service.title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed mb-6 flex-grow">{service.description}</p>
-                  <ul className="space-y-3 mb-8">
+                  {/* <ul className="space-y-3 mb-8">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-slate-500">
                         <div className="w-2 h-2 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] rounded-full mr-3 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                   <div className="mt-auto">
                     <Button
                       variant="link"
@@ -417,7 +418,7 @@ export default function ServicosPage() {
       </section>
 
       {/* Approach Section - Fundo branco */}
-      <section className="py-24 px-4 bg-white relative overflow-hidden">
+      {/* <section className="py-24 px-4 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
 
         <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
@@ -484,10 +485,10 @@ export default function ServicosPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section - Fundo gradiente */}
-      <section className="py-24 px-4 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(73,181,234,0.03)_90%,transparent_100%)]"></div>
@@ -502,29 +503,29 @@ export default function ServicosPage() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto relative">
           <div className="max-w-4xl mx-auto text-center fade-in-section opacity-0 transition-all duration-1000">
-            <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
               <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Pronto para Transformar?</span>
-            </div>
+            </div> */}
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               <span className="text-slate-900">Vamos </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
                 Construir Juntos
               </span>
             </h2>
-            <div className="p-6 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/20 rounded-xl mb-12">
+            {/* <div className="p-6 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/20 rounded-xl mb-12">
               <div className="flex items-start">
                 <Users className="h-6 w-6 text-[#49B5EA] mt-1 mr-3 flex-shrink-0" />
                 <p className="text-slate-700 font-medium">
                   Nosso time comercial está preparado para entender suas demandas com profundidade e indicar a solução mais adequada para seu contexto institucional.
                 </p>
               </div>
-            </div>
+            </div> */}
             <p className="text-xl text-slate-700 mb-12 max-w-2xl mx-auto leading-relaxed">
               Entre em contato e converse com um dos nossos especialistas
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 size="lg"
@@ -532,11 +533,11 @@ export default function ServicosPage() {
                 asChild
               >
                 <Link href="/contato">
-                  Fale com a Public Partner
+                  Entre em contato agora
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="group border-2 border-[#49B5EA]/50 text-[#49B5EA] hover:bg-[#49B5EA] hover:text-white px-10 py-6 text-lg font-semibold bg-white/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
@@ -546,7 +547,7 @@ export default function ServicosPage() {
                   Solicite uma proposta
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
