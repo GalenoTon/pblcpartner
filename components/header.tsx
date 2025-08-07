@@ -63,7 +63,7 @@ export default function Header() {
               Sobre
             </Link>
             <Link 
-              href="/#" 
+              href="/servicos" 
               style={{ color: customBlue }}
               className="text-lg font-medium transition-all duration-200 hover:scale-105 hover:text-customBlueHover"
               onMouseOver={(e) => e.currentTarget.style.color = customBlueHover}
@@ -72,7 +72,7 @@ export default function Header() {
               Serviços
             </Link>
             <Link 
-              href="/#" 
+              href="/capacitacao" 
               style={{ color: customBlue }}
               className="text-lg font-medium transition-all duration-200 hover:scale-105 hover:text-customBlueHover"
               onMouseOver={(e) => e.currentTarget.style.color = customBlueHover}

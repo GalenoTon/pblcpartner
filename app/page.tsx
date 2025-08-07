@@ -61,7 +61,7 @@ export default function HomePage() {
 
           <div className="absolute inset-0 flex items-center justify-center opacity-5 z-0">
             <img
-              src="/logowhite.png"
+              src="/logowhite2.png"
               alt="Public Partner Logo"
               className="h-auto w-full max-w-4xl object-contain"
               loading="lazy"

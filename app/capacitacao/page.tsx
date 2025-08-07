@@ -73,30 +73,48 @@ export default function CapacitacaoPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-16 overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.15),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(6,182,212,0.03)_50%,transparent_75%)] bg-[length:60px_60px]"></div>
+    <div className="min-h-screen text-slate-900 overflow-x-hidden">
+      {/* Hero Section - Mesmo padrão da HomePage */}
+      <section className="relative min-120px flex items-center justify-center overflow-hidden bg-slate-950 text-white px-6 md:px-12 lg:px-16 xl:px-24 py-24">
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            className="w-full h-full object-cover opacity-40"
+            poster="/placeholder.svg?height=1080&width=1920"
+          >
+            <source
+              src="https://videos.pexels.com/video-files/3141210/3141210-uhd_2560_1440_25fps.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/80 to-blue-950/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.15),transparent_90%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(20,184,166,0.1),transparent_90%)]" />
 
-        <div className="container mx-auto px-4 relative">
-          <div className="fade-in-section opacity-0 transition-all duration-1000 text-center max-w-5xl mx-auto">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 rounded-full mb-12">
-              <GraduationCap className="h-4 w-4 text-cyan-400 mr-2" />
-              <span className="text-sm font-medium text-cyan-400 tracking-wider uppercase">
-                Desenvolvimento Profissional
-              </span>
-            </div>
+          <div className="absolute inset-0 flex items-center justify-center opacity-5 z-0 pt-20">
+            <img
+              src="/logowhite2.png"
+              alt="Public Partner Logo"
+              className="h-auto w-150 max-w-4xl object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
 
-            <h1 className="text-6xl lg:text-8xl font-bold mb-12 leading-tight">
-              <span className="text-white">Capacitação e </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-300">
+        <div className="container mx-auto relative z-10 text-center">
+          <div className="max-w-4xl mx-auto fade-in-section opacity-0 transition-all duration-1000">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-12 font-bold mb-6 leading-tight">
+              <span className="block text-white">Capacitação e </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
                 Treinamentos
               </span>
             </h1>
-
-            <p className="text-2xl text-slate-300 leading-relaxed">
+            
+            <p className="text-xl md:text-2xl text-[#C5E8FA] leading-relaxed mb-12 max-w-3xl mx-auto">
               Na Public Partner, acreditamos que a transformação da gestão pública começa com o desenvolvimento de
               pessoas. Oferecemos programas de capacitação especialmente voltados a gestores, técnicos e servidores
               públicos.
@@ -105,9 +123,20 @@ export default function CapacitacaoPage() {
         </div>
       </section>
 
-      {/* Approach Section */}
-      <section className="py-32 bg-gradient-to-b from-slate-800 to-slate-900">
-        <div className="container mx-auto px-4">
+      {/* Approach Section - Fundo branco */}
+      <section className="py-24 px-4 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
+
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
+          <img
+            src="/justlogo.png"
+            alt="Public Partner Logo"
+            className="h-250 w-auto max-w-250 object-contain"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
           <div className="grid lg:grid-cols-3 gap-8">
             {[
               {
@@ -137,21 +166,21 @@ export default function CapacitacaoPage() {
             ].map((approach, index) => (
               <Card
                 key={index}
-                className={`fade-in-section opacity-0 transition-all duration-1000 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:border-cyan-400/50 hover:bg-slate-800/50 group hover:scale-105 hover:-translate-y-2 shadow-xl hover:shadow-2xl`}
+                className={`fade-in-section opacity-0 transition-all duration-1000 bg-white border border-slate-200 hover:border-[#49B5EA]/50 group hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-xl`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <CardContent className="p-8 text-center h-full flex flex-col">
                   <div
                     className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${approach.color} ${approach.hoverColor} rounded-2xl mb-8 group-hover:scale-110 transition-all duration-300`}
                   >
-                    <div className="text-cyan-400 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-[#49B5EA] group-hover:scale-110 transition-transform duration-300">
                       {approach.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-6 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold mb-6 text-slate-900 group-hover:text-[#49B5EA] transition-colors duration-300">
                     {approach.title}
                   </h3>
-                  <p className="text-slate-300 leading-relaxed flex-grow">{approach.description}</p>
+                  <p className="text-slate-600 leading-relaxed flex-grow">{approach.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -159,24 +188,34 @@ export default function CapacitacaoPage() {
         </div>
       </section>
 
-      {/* Topics Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(20,184,166,0.1),transparent_50%)]"></div>
+      {/* Topics Section - Fundo gradiente */}
+      <section className="py-24 px-4 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
+        </div>
+
+        <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
+          <img
+            src="/justlogo.png"
+            alt="Public Partner Logo"
+            className="h-100 w-auto max-w-100 object-contain"
+            loading="lazy"
+          />
+        </div>
 
         <div className="container mx-auto px-4 relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 rounded-full mb-8">
-              <Award className="h-4 w-4 text-cyan-400 mr-2" />
-              <span className="text-sm font-medium text-cyan-400 tracking-wider uppercase">Temas Estratégicos</span>
+            <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
+              <Award className="h-4 w-4 text-[#49B5EA] mr-2" />
+              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Temas Estratégicos</span>
             </div>
-            <h2 className="text-5xl lg:text-7xl font-bold mb-8">
-              <span className="text-white">Temas </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              <span className="text-slate-900">Temas </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
                 Estratégicos
               </span>
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-lg text-slate-700 max-w-3xl mx-auto">
               Oferecemos treinamentos nas seguintes áreas (entre outras):
             </p>
           </div>
@@ -185,11 +224,11 @@ export default function CapacitacaoPage() {
             {topics.map((topic, index) => (
               <div
                 key={index}
-                className={`fade-in-section opacity-0 transition-all duration-1000 group flex items-center space-x-4 p-6 bg-slate-800/30 backdrop-blur-sm rounded-xl border border-slate-700/50 hover:border-cyan-400/50 hover:bg-slate-800/50 hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl`}
+                className={`fade-in-section opacity-0 transition-all duration-1000 group flex items-center space-x-4 p-6 bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200 hover:border-[#49B5EA]/50 hover:bg-white hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
-                <span className="text-slate-300 group-hover:text-white transition-colors duration-300 font-medium">
+                <div className="w-3 h-3 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 font-medium">
                   {topic}
                 </span>
               </div>
@@ -198,17 +237,28 @@ export default function CapacitacaoPage() {
         </div>
       </section>
 
-      {/* Modalities Section */}
-      <section className="py-32 bg-gradient-to-b from-slate-800 to-slate-900">
-        <div className="container mx-auto px-4">
+      {/* Modalities Section - Fundo branco */}
+      <section className="py-24 px-4 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
+
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
+          <img
+            src="/justlogo.png"
+            alt="Public Partner Logo"
+            className="h-250 w-auto max-w-250 object-contain"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500/10 to-teal-500/10 border border-cyan-500/20 rounded-full mb-8">
-              <Monitor className="h-4 w-4 text-cyan-400 mr-2" />
-              <span className="text-sm font-medium text-cyan-400 tracking-wider uppercase">Modalidades</span>
+            <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/30 rounded-full mb-8">
+              <Monitor className="h-4 w-4 text-[#49B5EA] mr-2" />
+              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Modalidades</span>
             </div>
-            <h2 className="text-5xl lg:text-7xl font-bold mb-8">
-              <span className="text-white">Modalidades </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              <span className="text-slate-900">Modalidades </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
                 Disponíveis
               </span>
             </h2>
@@ -218,21 +268,21 @@ export default function CapacitacaoPage() {
             {modalities.map((modality, index) => (
               <Card
                 key={index}
-                className={`fade-in-section opacity-0 transition-all duration-1000 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:border-cyan-400/50 hover:bg-slate-800/50 group hover:scale-105 hover:-translate-y-2 shadow-xl hover:shadow-2xl`}
+                className={`fade-in-section opacity-0 transition-all duration-1000 bg-white border border-slate-200 hover:border-[#49B5EA]/50 group hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-xl`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <CardContent className="p-8 text-center h-full flex flex-col">
                   <div
                     className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${modality.color} ${modality.hoverColor} rounded-2xl mb-8 group-hover:scale-110 transition-all duration-300`}
                   >
-                    <div className="text-cyan-400 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-[#49B5EA] group-hover:scale-110 transition-transform duration-300">
                       {modality.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-6 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold mb-6 text-slate-900 group-hover:text-[#49B5EA] transition-colors duration-300">
                     {modality.title}
                   </h3>
-                  <p className="text-slate-300 leading-relaxed flex-grow">{modality.description}</p>
+                  <p className="text-slate-600 leading-relaxed flex-grow">{modality.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -240,21 +290,32 @@ export default function CapacitacaoPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)]"></div>
+      {/* CTA Section - Fundo gradiente */}
+      <section className="py-24 px-4 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(73,181,234,0.03)_90%,transparent_100%)]"></div>
+        </div>
+
+        <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
+          <img
+            src="/justlogo.png"
+            alt="Public Partner Logo"
+            className="h-100 w-auto max-w-100 object-contain"
+            loading="lazy"
+          />
+        </div>
 
         <div className="container mx-auto px-4 relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center max-w-5xl mx-auto">
-            <h2 className="text-5xl lg:text-7xl font-bold mb-12 leading-tight">
-              <span className="text-white">Curso </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
+            <h2 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
+              <span className="text-slate-900">Curso </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
                 Sob Medida
               </span>
             </h2>
 
-            <p className="text-xl text-slate-300 leading-relaxed mb-12">
+            <p className="text-xl text-slate-700 leading-relaxed mb-12">
               Deseja montar um curso sob medida para sua instituição? Entre em contato com nossa equipe técnica e
               comercial. Estamos prontos para ajudá-lo a capacitar sua equipe de forma estratégica e eficiente.
             </p>
@@ -262,7 +323,7 @@ export default function CapacitacaoPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <Button
                 size="lg"
-                className="group bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white px-10 py-4 text-lg font-semibold shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 transition-all duration-300"
+                className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-[#49B5EA]/30 hover:scale-105 transition-all duration-300"
                 asChild
               >
                 <Link href="/contato">
@@ -273,7 +334,7 @@ export default function CapacitacaoPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="group border-2 border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-10 py-4 text-lg font-semibold bg-slate-900/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
+                className="group border-2 border-[#49B5EA]/50 text-[#49B5EA] hover:bg-[#49B5EA] hover:text-white px-10 py-4 text-lg font-semibold bg-white/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
                 asChild
               >
                 <Link href="/contato">Fale com Nossa Equipe</Link>
@@ -281,17 +342,17 @@ export default function CapacitacaoPage() {
             </div>
 
             <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300">
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 border border-teal-500/20 rounded-full mb-4">
-                <ExternalLink className="h-4 w-4 text-teal-400 mr-2" />
-                <span className="text-sm font-medium text-teal-400 tracking-wider uppercase">Public Trainer</span>
+              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#7ACCF4]/10 to-[#49B5EA]/10 border border-[#7ACCF4]/30 rounded-full mb-4">
+                <ExternalLink className="h-4 w-4 text-[#7ACCF4] mr-2" />
+                <span className="text-sm font-medium text-[#7ACCF4] tracking-wider uppercase">Public Trainer</span>
               </div>
-              <p className="text-lg text-slate-300 mb-6">
+              <p className="text-lg text-slate-700 mb-6">
                 Conheça nossa plataforma especializada em capacitação para o setor público
               </p>
               <Button
                 size="lg"
                 variant="outline"
-                className="group border-2 border-teal-400/50 text-teal-400 hover:bg-teal-400 hover:text-slate-900 px-8 py-3 text-lg font-semibold bg-slate-900/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
+                className="group border-2 border-[#7ACCF4]/50 text-[#7ACCF4] hover:bg-[#7ACCF4] hover:text-white px-8 py-3 text-lg font-semibold bg-white/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
                 asChild
               >
                 <a href="https://www.publictrainer.com.br" target="_blank" rel="noopener noreferrer">
