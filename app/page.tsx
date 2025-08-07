@@ -139,7 +139,7 @@ export default function HomePage() {
         {/* Logo como fundo na seção Posicionamento Institucional */}
         <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
           <img 
-            src="/logopartner.png" 
+            src="/justlogo.png" 
             alt="Public Partner Logo"
             className="h-250 w-auto max-w-250 object-contain"
           />
@@ -292,9 +292,9 @@ export default function HomePage() {
 
   <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
           <img 
-            src="/logopartner.png" 
+            src="/justlogo.png" 
             alt="Public Partner Logo"
-            className="h-200 w-auto max-w-200 object-contain"
+            className="h-100 w-auto max-w-100 object-contain"
           />
         </div>
 
