@@ -27,7 +27,8 @@ export default function Header() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-white shadow-md"}`}
     >
-      <div className="container mx-auto px-14 pt-3 pb-3">
+      {/* Ajuste do padding para corresponder ao da página (px-6 md:px-12 lg:px-16 xl:px-24) */}
+      <div className="mx-auto px-6 md:px-12 lg:px-16 xl:px-24 pt-3 pb-3">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="relative w-32 h-32">
@@ -121,8 +122,8 @@ export default function Header() {
               {/* Header space */}
               <div className="h-20 bg-white border-b border-gray-100"></div>
               
-              {/* Navigation items */}
-              <nav className="px-6 py-8 bg-gradient-to-b from-white to-gray-50">
+              {/* Navigation items - Ajuste do padding para corresponder ao da página */}
+              <nav className="px-6 md:px-12 lg:px-16 xl:px-24 py-8 bg-gradient-to-b from-white to-gray-50">
                 <div className="space-y-1">
                   <Link
                     href="/"
