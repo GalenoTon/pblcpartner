@@ -255,7 +255,7 @@ export default function HomePage() {
               className="absolute inset-0 bg-cover bg-center z-0 transition-all duration-700 ease-out group-hover:scale-105"
               style={{ backgroundImage: `url(${service.bgImage})` }}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br from-[#15A4E5]/90 to-[#0d8bc5]/80 
+              <div className={`absolute inset-0 bg-gradient-to-br from-[#49BFEF]/100 to-[#0d8bc5]/80 
                 group-hover:from-[#15A4E5]/70 group-hover:to-[#0d8bc5]/80 transition-all duration-700 ease-out`}></div>
             </div>
 
