@@ -39,34 +39,28 @@ export default function SobrePage() {
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
       {/* Hero Section - Mesmo padrão da HomePage */}
       <section className="relative min-120px flex items-center justify-center overflow-hidden bg-slate-950 text-white px-6 md:px-12 lg:px-16 xl:px-24 py-24">
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            className="w-full h-full object-cover opacity-40"
-            poster="/placeholder.svg?height=1080&width=1920"
-          >
-            <source
-              src="https://videos.pexels.com/video-files/3141210/3141210-uhd_2560_1440_25fps.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/80 to-blue-950/90" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.15),transparent_90%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(20,184,166,0.1),transparent_90%)]" />
+      <div className="absolute inset-0 z-0">
+  <img
+    src="/photo4.jpg" // Substitua pelo caminho correto da imagem
+    alt="Background"
+    className="w-full h-full object-cover opacity-40"
+    loading="lazy"
+  />
 
-          <div className="absolute inset-0 flex items-center justify-center opacity-5 z-0 pt-20">
-            <img
-              src="/logowhite2.png"
-              alt="Public Partner Logo"
-              className="h-auto w-150 max-w-4xl object-contain"
-              loading="lazy"
-            />
-          </div>
-        </div>
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/80 to-blue-950/90" />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.15),transparent_90%)]" />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(20,184,166,0.1),transparent_90%)]" />
+
+  <div className="absolute inset-0 flex items-center justify-center opacity-5 z-0 pt-20">
+    <img
+      src="/logowhite2.png"
+      alt="Public Partner Logo"
+      className="h-auto w-150 max-w-4xl object-contain"
+      loading="lazy"
+    />
+  </div>
+</div>
+
 
         <div className="container mx-auto relative z-10 text-center">
           <div className="max-w-4xl mx-auto fade-in-section opacity-0 transition-all duration-1000">

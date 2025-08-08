@@ -1,81 +1,65 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, Users, BookOpen, Monitor, ArrowRight, ExternalLink, Target, Award } from "lucide-react"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  Users,
+  BookOpen,
+  Target,
+  Monitor,
+  GraduationCap,
+  ArrowRight,
+  ExternalLink,
+} from "lucide-react";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (custom = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: custom * 0.15, ease: "easeOut", duration: 0.6 },
+  }),
+};
+
+const temas = [
+  "Planejamento estratégico para contratações públicas",
+  "Elaboração de Estudos Técnicos Preliminares e Termos de Referência",
+  "Fiscalização, controle e gestão contratual eficaz",
+  "Avaliação e reequilíbrio econômico-financeiro de contratos públicos",
+  "Desenvolvimento e análise jurídica de editais",
+  "Responsabilidade e compliance para agentes públicos",
+  "Governança pública, integridade e transparência",
+  "Inovação e sustentabilidade para o setor público",
+];
+
+const modalidades = [
+  {
+    icon: <Users className="w-6 h-6" style={{ color: '#44B6EA' }} />,
+    title: "Presenciais",
+    description: "Formações in company e em polos regionais",
+  },
+  {
+    icon: <Monitor className="w-6 h-6" style={{ color: '#44B6EA' }} />,
+    title: "Online ao vivo",
+    description: "Cursos interativos com participação em tempo real",
+  },
+  {
+    icon: <BookOpen className="w-6 h-6" style={{ color: '#44B6EA' }} />,
+    title: "Cursos gravados",
+    description: "Acesso sob demanda, no seu ritmo",
+  },
+  {
+    icon: <GraduationCap className="w-6 h-6" style={{ color: '#44B6EA' }} />,
+    title: "Trilhas de aprendizagem",
+    description: "Programas modulares e progressivos",
+  },
+];
 
 export default function CapacitacaoPage() {
-  const observerRef = useRef<IntersectionObserver | null>(null)
-
-  useEffect(() => {
-    // Scroll to top when page loads
-    window.scrollTo(0, 0)
-
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in-up")
-          }
-        })
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
-    )
-
-    const elements = document.querySelectorAll(".fade-in-section")
-    elements.forEach((el) => observerRef.current?.observe(el))
-
-    return () => observerRef.current?.disconnect()
-  }, [])
-
-  const topics = [
-    "Planejamento das contratações públicas",
-    "Estudos Técnicos Preliminares (ETP) e Termos de Referência",
-    "Fiscalização e gestão contratual",
-    "Reequilíbrio econômico-financeiro de contratos",
-    "Elaboração de editais e análise jurídica de processos",
-    "Responsabilidade de agentes públicos",
-    "Governança, integridade e controle",
-    "Sustentabilidade e inovação no setor público",
-  ]
-
-  const modalities = [
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "Presenciais",
-      description: "In company ou em polos regionais",
-      color: "from-blue-500/20 to-indigo-500/20",
-      hoverColor: "hover:from-blue-500/30 hover:to-indigo-500/30",
-    },
-    {
-      icon: <Monitor className="h-6 w-6" />,
-      title: "Online ao vivo",
-      description: "Com interação em tempo real",
-      color: "from-green-500/20 to-emerald-500/20",
-      hoverColor: "hover:from-green-500/30 hover:to-emerald-500/30",
-    },
-    {
-      icon: <BookOpen className="h-6 w-6" />,
-      title: "Cursos gravados",
-      description: "Sob demanda",
-      color: "from-purple-500/20 to-pink-500/20",
-      hoverColor: "hover:from-purple-500/30 hover:to-pink-500/30",
-    },
-    {
-      icon: <GraduationCap className="h-6 w-6" />,
-      title: "Trilhas de aprendizagem",
-      description: "Formações modulares",
-      color: "from-orange-500/20 to-red-500/20",
-      hoverColor: "hover:from-orange-500/30 hover:to-red-500/30",
-    },
-  ]
-
   return (
-    <div className="min-h-screen text-slate-900 overflow-x-hidden">
-      {/* Hero Section - Mesmo padrão da HomePage */}
-      <section className="relative min-120px flex items-center justify-center overflow-hidden bg-slate-950 text-white px-6 md:px-12 lg:px-16 xl:px-24 py-24">
+    <main className="bg-gray-50 min-h-screen font-sans">
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 text-white px-6 md:px-20 lg:px-36 py-28">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -92,8 +76,8 @@ export default function CapacitacaoPage() {
             />
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/80 to-blue-950/90" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.15),transparent_90%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(20,184,166,0.1),transparent_90%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(68,182,234,0.15),transparent_90%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(17,53,132,0.1),transparent_90%)]" />
 
           <div className="absolute inset-0 flex items-center justify-center opacity-5 z-0 pt-20">
             <img
@@ -105,290 +89,240 @@ export default function CapacitacaoPage() {
           </div>
         </div>
 
-        <div className="container mx-auto relative z-10 text-center">
-          <div className="max-w-4xl mx-auto fade-in-section opacity-0 transition-all duration-1000">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-12 font-bold mb-6 leading-tight">
-              <span className="block text-white">Capacitação e </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
-                Treinamentos
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-[#C5E8FA] leading-relaxed mb-12 max-w-3xl mx-auto">
-              Na Public Partner, acreditamos que a transformação da gestão pública começa com o desenvolvimento de
-              pessoas. Por isso, oferecemos programas de capacitação e treinamentos especialmente voltados a gestores, técnicos e servidores públicos, com foco em conteúdo prático, atualizado e customizado conforme as necessidades de cada instituição.
-            </p>
-          </div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto text-center relative z-10"
+        >
+          <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight mb-6 tracking-wide">
+            Capacitação e{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#44B6EA] via-[#8FD4F7] to-[#44B6EA]">
+              Excelência
+            </span> para a Gestão Pública
+          </h1>
+          <p className="max-w-3xl mx-auto text-lg md:text-xl font-light leading-relaxed text-blue-100">
+            Oferecemos soluções educacionais customizadas, alinhadas às demandas
+            institucionais, para transformar conhecimento em resultados efetivos e
+            inovação na administração pública.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Introdução */}
+      <section className="max-w-5xl mx-auto px-6 md:px-12 py-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="border-l-4 pl-8"
+          style={{ borderColor: '#44B6EA' }}
+        >
+          <p className="text-xl text-gray-900 leading-relaxed max-w-3xl font-light">
+            Nossos cursos são estruturados para atender às necessidades específicas
+            de órgãos e instituições públicas, com metodologias práticas e focadas
+            na resolução dos desafios reais do setor.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Diferenciais / Abordagem */}
+      <section className="bg-white py-24 px-6 md:px-20 shadow-inner rounded-t-3xl">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-14">
+          {[
+            {
+              icon: <Users className="w-10 h-10" style={{ color: '#44B6EA' }} />,
+              title: "Personalização Completa",
+              description:
+                "Diagnóstico detalhado para oferecer treinamentos alinhados às reais demandas institucionais.",
+            },
+            {
+              icon: <BookOpen className="w-10 h-10" style={{ color: '#44B6EA' }} />,
+              title: "Conteúdo Atualizado",
+              description:
+                "Base rigorosa na legislação vigente, incluindo a Nova Lei de Licitações (14.133/21) e melhores práticas.",
+            },
+            {
+              icon: <Target className="w-10 h-10" style={{ color: '#44B6EA' }} />,
+              title: "Aprendizado Aplicado",
+              description:
+                "Metodologias ativas com estudos de caso, simulações e debates para impacto imediato.",
+            },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={i}
+              variants={fadeInUp}
+              className="bg-white rounded-xl shadow-lg p-10 flex flex-col gap-6 hover:shadow-2xl transition-shadow cursor-default border border-gray-100"
+            >
+              <div className="mb-4">{item.icon}</div>
+              <h3 className="text-2xl font-serif font-semibold" style={{ color: '#113584' }}>
+                {item.title}
+              </h3>
+              <p className="text-gray-700 font-light leading-relaxed">{item.description}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Introdução Section - Fundo branco */}
-      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
+      {/* Temas Estratégicos */}
+      <section className="max-w-5xl mx-auto px-6 md:px-12 py-24">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="text-4xl font-serif font-bold mb-14 text-center"
+          style={{ color: '#113584' }}
+        >
+          Temas Estratégicos
+        </motion.h2>
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-250 w-auto max-w-250 object-contain"
-            loading="lazy"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {temas.map((tema, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={i}
+              variants={fadeInUp}
+              className="relative bg-white rounded-xl shadow-md border border-gray-200 p-6 cursor-pointer hover:shadow-xl transition-all duration-300 flex items-center gap-5 hover:border-blue-300"
+              style={{
+                '--hover-border-color': '#44B6EA'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#44B6EA';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#e5e7eb';
+              }}
+            >
+              <span 
+                className="w-4 h-4 rounded-full flex-shrink-0"
+                style={{ backgroundColor: '#44B6EA' }}
+              ></span>
+              <p className="text-gray-900 font-semibold">{tema}</p>
+            </motion.div>
+          ))}
         </div>
+      </section>
 
-        <div className="container mx-auto relative">
-          <div className="max-w-4xl mx-auto fade-in-section opacity-0 transition-all duration-1000">
-            <div className="bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] border border-[#49B5EA]/20 rounded-2xl p-8 md:p-12 shadow-lg">
-              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
-                <p>
-                  Nossa proposta vai além da simples transmissão de conhecimento: promovemos a aplicação prática dos temas abordados, utilizando estudos de caso reais, simulações e troca de experiências que agregam valor imediato à rotina dos participantes.
-                </p>
+      {/* Modalidades */}
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-24 px-6 md:px-20 rounded-b-3xl">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="text-4xl font-serif font-bold mb-16 text-center"
+          style={{ color: '#113584' }}
+        >
+          Modalidades de Treinamento
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto">
+          {modalidades.map((mod, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={i}
+              variants={fadeInUp}
+              className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col items-center gap-5 text-center"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#44B6EA';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#f3f4f6';
+              }}
+            >
+              <div className="p-4 rounded-full" style={{ backgroundColor: '#44B6EA20' }}>
+                {mod.icon}
               </div>
-            </div>
-          </div>
+              <h3 className="text-xl font-serif font-semibold" style={{ color: '#113584' }}>
+                {mod.title}
+              </h3>
+              <p className="text-gray-700 font-light">{mod.description}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Approach Section - Fundo branco */}
-      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
+      {/* Call to Action */}
+      <section className="max-w-4xl mx-auto text-center py-20 px-6 md:px-12">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="text-4xl font-serif font-bold mb-6"
+          style={{ color: '#113584' }}
+        >
+          Treinamento Personalizado
+        </motion.h2>
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-250 w-auto max-w-250 object-contain"
-            loading="lazy"
-          />
-        </div>
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="text-lg text-gray-700 mb-10 font-light max-w-xl mx-auto"
+        >
+          Está pronto para desenvolver uma capacitação alinhada aos desafios da sua equipe? Entre em contato e construa conosco um programa sob medida, focado em resultados e inovação.
+        </motion.p>
 
-        <div className="container mx-auto relative">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Users className="h-8 w-8" />,
-                title: "Abordagem Personalizada",
-                description:
-                  "Cada órgão público possui sua própria realidade, desafios e limitações. Por isso, nossos cursos são planejados sob medida, a partir de um diagnóstico prévio e alinhamento de expectativas. O objetivo é garantir o máximo aproveitamento dos participantes e resultados efetivos para a instituição.",
-                color: "from-blue-500/20 to-indigo-500/20",
-                hoverColor: "hover:from-blue-500/30 hover:to-indigo-500/30",
-              },
-              {
-                icon: <BookOpen className="h-8 w-8" />,
-                title: "Conteúdo Atualizado e Alinhado às Normas",
-                description:
-                  "Todas as formações seguem as diretrizes das legislações mais recentes, especialmente da Nova Lei de Licitações e Contratos (Lei nº 14.133/2021), da jurisprudência dos Tribunais de Contas, da LINDB, além das melhores práticas em gestão pública contemporânea.",
-                color: "from-emerald-500/20 to-teal-500/20",
-                hoverColor: "hover:from-emerald-500/30 hover:to-teal-500/30",
-              },
-              {
-                icon: <Target className="h-8 w-8" />,
-                title: "Aplicação Prática",
-                description:
-                  "Promovemos a aplicação prática dos temas abordados, utilizando estudos de caso reais, simulações e troca de experiências que agregam valor imediato à rotina dos participantes.",
-                color: "from-purple-500/20 to-pink-500/20",
-                hoverColor: "hover:from-purple-500/30 hover:to-pink-500/30",
-              },
-            ].map((approach, index) => (
-              <Card
-                key={index}
-                className={`fade-in-section opacity-0 transition-all duration-1000 bg-white border border-slate-200 hover:border-[#49B5EA]/50 group hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-xl`}
-                style={{ transitionDelay: `${index * 200}ms` }}
-              >
-                <CardContent className="p-8 text-center h-full flex flex-col">
-                  <div
-                    className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${approach.color} ${approach.hoverColor} rounded-2xl mb-8 group-hover:scale-110 transition-all duration-300`}
-                  >
-                    <div className="text-[#49B5EA] group-hover:scale-110 transition-transform duration-300">
-                      {approach.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-6 text-slate-900 group-hover:text-[#49B5EA] transition-colors duration-300">
-                    {approach.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed flex-grow">{approach.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        <Link
+          href="/contato"
+          className="inline-block border-2 px-14 py-4 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:text-white"
+          style={{ 
+            borderColor: '#44B6EA', 
+            color: '#44B6EA'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#44B6EA';
+            e.currentTarget.style.color = 'white';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.color = '#44B6EA';
+          }}
+        >
+          Fale com a Equipe <ArrowRight className="inline ml-2 -mb-1" />
+        </Link>
       </section>
 
-      {/* Topics Section - Fundo gradiente */}
-      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
-        </div>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-100 w-auto max-w-100 object-contain"
-            loading="lazy"
-          />
-        </div>
-
-        <div className="container mx-auto relative">
-          <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-20">
-            {/* <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
-              <Award className="h-4 w-4 text-[#49B5EA] mr-2" />
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Temas Estratégicos</span>
-            </div> */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Temas </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
-                Estratégicos
-              </span>
-            </h2>
-            <p className="text-lg text-slate-700 max-w-3xl mx-auto">
-              Oferecemos treinamentos nas seguintes áreas (entre outras):
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {topics.map((topic, index) => (
-              <div
-                key={index}
-                className={`fade-in-section opacity-0 transition-all duration-1000 group flex items-center space-x-4 p-6 bg-white/80 backdrop-blur-sm rounded-xl border border-slate-200 hover:border-[#49B5EA]/50 hover:bg-white hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="w-3 h-3 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
-                <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 font-medium">
-                  {topic}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Link externo */}
+      <section className="max-w-4xl mx-auto text-center py-10 px-6 md:px-12 mb-20">
+        <p className="text-gray-700 font-light mb-4">
+          Para mais detalhes sobre nossos cursos, acesse:
+        </p>
+        <a
+          href="https://www.publictrainer.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-3 px-8 py-3 border-2 rounded-full font-semibold transition-colors duration-300 shadow-md hover:shadow-lg hover:text-white"
+          style={{ 
+            borderColor: '#113584', 
+            color: '#113584'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#113584';
+            e.currentTarget.style.color = 'white';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.color = '#113584';
+          }}
+        >
+          www.publictrainer.com.br <ExternalLink className="w-5 h-5" />
+        </a>
       </section>
-
-      {/* Modalities Section - Fundo branco */}
-      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-250 w-auto max-w-250 object-contain"
-            loading="lazy"
-          />
-        </div>
-
-        <div className="container mx-auto relative">
-          <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-20">
-            {/* <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/30 rounded-full mb-8">
-              <Monitor className="h-4 w-4 text-[#49B5EA] mr-2" />
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Modalidades</span>
-            </div> */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Modalidades </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
-                Disponíveis
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {modalities.map((modality, index) => (
-              <Card
-                key={index}
-                className={`fade-in-section opacity-0 transition-all duration-1000 bg-white border border-slate-200 hover:border-[#49B5EA]/50 group hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-xl`}
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
-                <CardContent className="p-8 text-center h-full flex flex-col">
-                  <div
-                    className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${modality.color} ${modality.hoverColor} rounded-2xl mb-8 group-hover:scale-110 transition-all duration-300`}
-                  >
-                    <div className="text-[#49B5EA] group-hover:scale-110 transition-transform duration-300">
-                      {modality.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-6 text-slate-900 group-hover:text-[#49B5EA] transition-colors duration-300">
-                    {modality.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed flex-grow">{modality.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section - Fundo gradiente */}
-      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(73,181,234,0.03)_90%,transparent_100%)]"></div>
-        </div>
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
-          <img
-            src="/justlogo.png"
-            alt="Public Partner Logo"
-            className="h-100 w-auto max-w-100 object-contain"
-            loading="lazy"
-          />
-        </div>
-
-        <div className="container mx-auto relative">
-          <div className="fade-in-section opacity-0 transition-all duration-1000 text-center max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
-              <span className="text-slate-900">Curso </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
-                Sob Medida
-              </span>
-            </h2>
-
-            <p className="text-xl text-slate-700 leading-relaxed mb-12">
-              Deseja montar um curso sob medida para sua instituição? Entre em contato com nossa equipe técnica e
-              comercial. Estamos prontos para ajudá-lo a capacitar sua equipe de forma estratégica e eficiente.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              {/* <Button
-                size="lg"
-                className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-[#49B5EA]/30 hover:scale-105 transition-all duration-300"
-                asChild
-              >
-                <Link href="/contato">
-                  Solicite um Orçamento
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button> */}
-              <Button
-                variant="outline"
-                size="lg"
-                className="group border-2 border-[#49B5EA]/50 text-[#49B5EA] hover:bg-[#49B5EA] hover:text-white px-10 py-4 text-lg font-semibold bg-white/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
-                asChild
-              >
-                <Link href="/contato">Fale com Nossa Equipe</Link>
-              </Button>
-            </div>
-
-            <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300">
-              {/* <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#7ACCF4]/10 to-[#49B5EA]/10 border border-[#7ACCF4]/30 rounded-full mb-4">
-                <ExternalLink className="h-4 w-4 text-[#7ACCF4] mr-2" />
-                <span className="text-sm font-medium text-[#7ACCF4] tracking-wider uppercase">Public Trainer</span>
-              </div> */}
-              <p className="text-lg text-slate-700 mb-6">
-                Conheça mais sobre nossos cursos acessando:
-              </p>
-              <Button
-                size="lg"
-                variant="outline"
-                className="group border-2 border-[#7ACCF4]/50 text-[#7ACCF4] hover:bg-[#7ACCF4] hover:text-white px-8 py-3 text-lg font-semibold bg-white/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
-                asChild
-              >
-                <a href="https://www.publictrainer.com.br" target="_blank" rel="noopener noreferrer">
-                  www.publictrainer.com.br
-                  <ExternalLink className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
+    </main>
+  );
 }
