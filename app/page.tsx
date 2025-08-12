@@ -1,10 +1,23 @@
 "use client"
-
+import { motion } from "framer-motion";
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Play, Phone, BriefcaseBusiness, ChartGantt, ClipboardList, GraduationCap } from "lucide-react"
+import { ArrowRight, Play, BriefcaseBusiness, ChartGantt, ClipboardList, GraduationCap, ChevronRight } from "lucide-react"
 import Link from "next/link"
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: (custom = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: custom * 0.12,
+      ease: [0.25, 0.1, 0.25, 1],
+      duration: 0.8
+    },
+  }),
+};
 
 export default function HomePage() {
   const observerRef = useRef<IntersectionObserver | null>(null)
@@ -71,7 +84,7 @@ export default function HomePage() {
 
         <div className="container mx-auto relative z-10 text-left">
           <div className="max-w-4xl fade-in-section opacity-0 transition-all duration-1000">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight pt-10">
               <span className="block text-white">Transformamos</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
                 Desafios em Soluções
@@ -87,36 +100,30 @@ export default function HomePage() {
                 pública e privada.
               </p>
 
-              <div className="flex items-left justify-left space-x-3 text-[#49B5EA]">
+              {/* <div className="flex items-left justify-left space-x-3 text-[#49B5EA]">
                 <ArrowRight className="h-5 w-5 flex-shrink-0" />
                 <p className="text-lg md:text-xl font-medium">
                   Experiência, técnica e visão de futuro aplicadas aos seus desafios.
                 </p>
-              </div>
+              </div> */}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-left">
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-[#49B5EA]/25 transition-all duration-300 hover:scale-105"
-                asChild
+            <div className="flex flex-col sm:flex-row gap-6 justify-left items-center">
+              <Link
+                href="/servicos"
+                className="group relative px-10 py-4 bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/25 transform hover:-translate-y-1"
               >
-                <Link href="/#">
-                  Conheça nossos serviços
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="group border-2 border-[#49B5EA]/50 text-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950 px-8 py-4 text-lg font-semibold bg-slate-950/50 backdrop-blur-sm hover:scale-105 transition-all duration-300"
-                asChild
+                <span className="relative z-10">Conheça nossos serviços</span>
+                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                href="/contato"
+                className="group px-10 py-4 border-2 border-[#49B5EA]/50 backdrop-blur-sm text-[#49B5EA] font-semibold rounded-lg transition-all duration-300 hover:border-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950"
               >
-                <Link href="/contato">
-                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Fale com nossa equipe
-                </Link>
-              </Button>
+                Fale conosco
+                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>
@@ -138,11 +145,13 @@ export default function HomePage() {
         <div className="container mx-auto relative">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
             <div className="lg:w-1/2 fade-in-section opacity-0 transition-all duration-1000">
-              <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-full mb-8">
+              {/* <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-lg mb-8">
                 <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">
                   Posicionamento Institucional
                 </span>
-              </div>
+              </div> */}
+              <div className="w-20 h-1 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] mb-8" />
+
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
                 <span className="text-slate-900">Conectamos </span>
@@ -193,114 +202,164 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(73,181,234,0.1),transparent_70%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(73,181,234,0.1),transparent_70%)]"></div>
+      <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-100/30 to-indigo-100/30 rounded-full blur-3xl"></div>
+        </div>
 
-        <div className="container mx-auto relative">
-          <div className="text-center max-w-3xl mx-auto mb-20 fade-in-section opacity-0 transition-all duration-1000">
-            {/* <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-full mb-8 hover:bg-[#49B5EA]/10 hover:border-[#49B5EA]/50 transition-all duration-500 ease-out">
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Nossos Pilares</span>
-            </div> */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
-              <span>Áreas de </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] hover:bg-gradient-to-l transition-all duration-700 ease-in-out">
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0)`,
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+
+        <div className="container mx-auto px-6 md:px-8 lg:px-12 xl:px-16 relative z-10">
+          {/* Header Section */}
+          <div className="text-center max-w-4xl mx-auto mb-24">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200/50 rounded-full mb-8 shadow-sm hover:shadow-md transition-all duration-300">
+        <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+        <span className="text-sm font-semibold text-blue-700 tracking-wide uppercase">Nossas Especialidades</span>
+      </div> */}
+
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 font-black leading-tight">
+              <span className="text-slate-900">Áreas de </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#7ACCF4] to-[#49B5EA]">
                 Atuação
               </span>
             </h2>
-            <p className="text-lg text-slate-700 hover:text-slate-800 transition-colors duration-500 ease-out">
-              Soluções especializadas para os desafios mais complexos do setor público e privado.
+
+            <p className="text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
+              Transformamos desafios complexos em soluções inovadoras através de expertise especializada e metodologias comprovadas.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Services Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {[
               {
-                icon: <ChartGantt className="h-8 w-8" />,
+                icon: <ChartGantt className="h-10 w-10" />,
                 title: "Consultorias Estratégicas",
-                description: "Soluções personalizadas para desafios complexos do setor público.",
-                bgImage: "photo1.jpg"
+                description: "Desenvolvemos estratégias personalizadas que impulsionam a transformação digital e otimização de processos no setor público.",
+                bgImage: "photo1.jpg",
+                gradient: "from-[#49B5EA] to-cyan-500 to-cyan-700"
               },
               {
-                icon: <ClipboardList className="h-8 w-8" />,
+                icon: <ClipboardList className="h-10 w-10" />,
                 title: "Assessoria Técnica Especializada",
-                description: "Suporte técnico especializado para tomada de decisões estratégicas.",
-                bgImage: "photo2.jpg"
+                description: "Fornecemos suporte técnico de alta qualidade para decisões estratégicas complexas com base em dados e análises aprofundadas.",
+                bgImage: "photo2.jpg",
+                gradient: "from-[#49B5EA] to-cyan-500 to-cyan-700"
               },
               {
-                icon: <BriefcaseBusiness className="h-8 w-8" />,
+                icon: <BriefcaseBusiness className="h-10 w-10" />,
                 title: "Gestão de Projetos Públicos",
-                description: "Estruturação e gestão eficiente de projetos públicos.",
-                bgImage: "photo3.jpg"
+                description: "Estruturamos e gerenciamos projetos públicos com metodologias ágeis, garantindo eficiência e transparência em cada etapa.",
+                bgImage: "photo3.jpg",
+                gradient: "from-[#49B5EA] to-cyan-500 to-cyan-700"
               },
               {
-                icon: <GraduationCap className="h-8 w-8" />,
-                title: "Capacitação Técnica e Formação de Gestores",
-                description: "Formação especializada de gestores e servidores públicos.",
-                bgImage: "photo4.jpg"
+                icon: <GraduationCap className="h-10 w-10" />,
+                title: "Capacitação e Formação",
+                description: "Programas de capacitação inovadores que desenvolvem competências essenciais para líderes e gestores do setor público.",
+                bgImage: "photo4.jpg",
+                gradient: "from-[#49B5EA] to-cyan-500 to-cyan-700"
               },
             ].map((service, index) => (
+
               <div
                 key={index}
-                className="group perspective-1000"
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className="group cursor-pointer"
+                style={{
+                  animationDelay: `${index * 150}ms`,
+                  animation: 'fadeInUp 0.8s ease-out forwards',
+                  opacity: 0
+                }}
               >
-                <Card
-                  className={`h-full fade-in-section opacity-0 transition-all duration-700 ease-out hover:shadow-2xl hover:shadow-[#49B5EA]/20
-                  group-hover:-translate-y-2 group-hover:border-[#49B5EA]/40 transform-gpu 
-                  relative overflow-hidden border-2 border-transparent hover:border-[#49B5EA]/30`}
-                >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center z-0 transition-all duration-700 ease-out group-hover:scale-105"
-                    style={{ backgroundImage: `url(${service.bgImage})` }}
-                  >
-                    <div className={`absolute inset-0 bg-gradient-to-br from-[#49B5EA]/100 to-[#2C9CDB]/80 
-                      group-hover:from-[#49B5EA]/100 group-hover:to-[#2C9CDB]/80 transition-all duration-700 ease-out`}></div>
-                  </div>
+                <Link
+                  href="/servicos">
+                  <div className="relative h-[400px] rounded-3xl overflow-hidden bg-white shadow-xl hover:shadow-2xl transition-all duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.02] border border-slate-200/50">
+                    {/* Background Image */}
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                      style={{ backgroundImage: `url(${service.bgImage})` }}
+                    >
+                      <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-90 group-hover:opacity-95 transition-opacity duration-700`}></div>
+                    </div>
 
-                  <CardContent className="p-6 h-full flex flex-col relative z-10">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6 
-                      group-hover:bg-white/30 group-hover:scale-110 transition-all duration-600 ease-out shadow-lg group-hover:shadow-xl group-hover:shadow-[#49B5EA]/30 border border-white/20">
-                      <div className="text-white group-hover:text-white transition-all duration-600 ease-out transform group-hover:scale-110">
-                        {service.icon}
+                    {/* Decorative Elements */}
+                    <div className="absolute top-6 right-6 w-20 h-20 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-700"></div>
+                    <div className="absolute bottom-6 left-6 w-32 h-32 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-all duration-700"></div>
+
+                    {/* Content */}
+                    <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                      {/* Icon */}
+                      <div className="inline-flex">
+                        <div className="p-4 bg-white/20 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-500">
+                          <div className="text-white transition-transform duration-500">
+                            {service.icon}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Text Content */}
+                      <div className="space-y-4">
+                        <h3 className="text-2xl font-bold text-white leading-tight group-hover:translate-y-[-2px] transition-transform duration-500">
+                          {service.title}
+                        </h3>
+                        <p className="text-white/90 leading-relaxed text-base group-hover:text-white transition-colors duration-500">
+                          {service.description}
+                        </p>
+                      </div>
+
+                      {/* Action Button */}
+                      <div className="pt-6">
+                        <div className="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all duration-500 cursor-pointer">
+                          <span>Explorar serviço</span>
+                          <div className="p-2 bg-white/20 rounded-full group-hover:bg-white/30 group-hover:translate-x-1 transition-all duration-500">
+                            <ArrowRight className="h-4 w-4" />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-4 text-white group-hover:text-white/95 transition-all duration-600 ease-out transform group-hover:translate-y-[-2px]">
-                      {service.title}
-                    </h3>
-                    <p className="text-white/90 leading-relaxed mb-6 flex-grow group-hover:text-white/95 transition-all duration-600 ease-out">
-                      {service.description}
-                    </p>
-                    <div className="mt-auto">
-                      <Button
-                        variant="ghost"
-                        className="group/btn text-white hover:text-white px-0 hover:bg-transparent transition-all duration-500 ease-out"
-                        asChild
-                      >
-                        <Link href="/#">
-                          <span className="relative overflow-hidden">
-                            <span className="inline-block transition-all duration-500 ease-out group-hover/btn:translate-x-1">
-                              Saiba mais
-                            </span>
-                            <ArrowRight className="ml-2 h-4 w-4 inline-block transition-all duration-500 ease-out group-hover/btn:translate-x-1 group-hover/btn:scale-125" />
-                            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 ease-out origin-left"></span>
-                          </span>
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
+
+                    {/* Hover Effect Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  </div>
+                </Link>
+
               </div>
+
             ))}
           </div>
+
+
         </div>
+
+        <style jsx>{`
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  `}</style>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
+      <section className="py-32 px-6 md:px-12 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+        {/* Background effects */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(73,181,234,0.03)_90%,transparent_100%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.1),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(14,165,233,0.1),transparent_70%)]" />
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
@@ -312,45 +371,54 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="container mx-auto relative">
-          <div className="max-w-3xl mx-auto text-center fade-in-section opacity-0 transition-all duration-1000">
-            <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Pronto para Transformar?</span>
-            </div>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-5xl md:text-6xl font-bold mb-8 text-gray-900"
+            >
+              Vamos <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-500">Construir Juntos</span>
+            </motion.h2>
 
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
-              Vamos <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">Conversar</span>
-            </h2>
+            <motion.p
+              variants={fadeInUp}
+              custom={1}
+              className="text-xl text-gray-700 mb-16 max-w-3xl mx-auto leading-relaxed"
+            >
+              Nosso time está preparado para entender suas demandas específicas e desenvolver
+              a solução mais adequada para o contexto da sua instituição.
+              <span className="block mt-4 font-semibold text-cyan-600">
+                Entre em contato e converse com um dos nossos especialistas.
+              </span>
+            </motion.p>
 
-            <p className="text-lg text-slate-700 mb-10 mx-auto leading-relaxed max-w-xl">
-              Soluções personalizadas para os desafios do seu negócio ou instituição.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-10 py-6 text-lg font-semibold shadow-xl hover:shadow-[#49B5EA]/30 transition-all duration-300 hover:scale-[1.03]"
-                asChild
+            <motion.div
+              variants={fadeInUp}
+              custom={2}
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            >
+              <Link
+                href="/contato"
+                className="group relative px-16 py-6 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-2"
               >
-                <Link href="/contato">
-                  Agendar uma conversa
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
+                <span className="relative z-10">Entre em contato agora</span>
+                <ArrowRight className="inline ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 transition-opacity" />
+              </Link>
 
-              <Button
-                variant="outline"
-                size="lg"
-                className="group border-2 border-[#49B5EA]/40 text-[#49B5EA] hover:bg-[#49B5EA]/5 px-10 py-6 text-lg font-semibold bg-white/80 backdrop-blur-sm hover:scale-[1.02]"
-                asChild
+              <Link
+                href="/sobre"
+                className="group px-12 py-6 border-2 border-blue-600/30 text-blue-600 font-semibold text-lg rounded-lg transition-all duration-300 hover:border-blue-600/50 hover:bg-blue-50"
               >
-                <Link href="/contato">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Falar agora
-                </Link>
-              </Button>
-            </div>
-          </div>
+                Conheça nossa história
+                <ChevronRight className="inline ml-4 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,13 +1,30 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion";
 // import { Card, CardContent } from "@/components/ui/card"
-import { Users, Lightbulb, MapPin, Calendar, TrendingUp, ArrowRight, Star } from "lucide-react"
+import { Users, Lightbulb, MapPin, Calendar, TrendingUp, ArrowRight, Star, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: (custom = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { 
+      delay: custom * 0.12, 
+      ease: [0.25, 0.1, 0.25, 1], 
+      duration: 0.8 
+    },
+  }),
+};
+
 export default function SobrePage() {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.7]);
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   const handleScrollToHistory = (e: React.MouseEvent) => {
@@ -38,58 +55,123 @@ export default function SobrePage() {
   return (
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
       {/* Hero Section - Mesmo padrão da HomePage */}
-      <section className="relative min-120px flex items-center justify-center overflow-hidden bg-slate-950 text-white px-6 md:px-12 lg:px-16 xl:px-24 py-24">
-      <div className="absolute inset-0 z-0">
-  <img
-    src="/photo4.jpg" // Substitua pelo caminho correto da imagem
-    alt="Background"
-    className="w-full h-full object-cover opacity-40"
-    loading="lazy"
-  />
+      <section className="relative min-120px sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+        {/* Fundo com vídeo e overlays */}
+        <motion.div
+          className="absolute inset-0 z-0"
+          style={{ y, opacity }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover opacity-40"
+            poster="/placeholder.svg?height=1080&width=1920"
+          >
+            <source
+              src="https://videos.pexels.com/video-files/3141210/3141210-uhd_2560_1440_25fps.mp4"
+              type="video/mp4"
+            />
+          </video>
 
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/80 to-blue-950/90" />
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.15),transparent_90%)]" />
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(20,184,166,0.1),transparent_90%)]" />
+          {/* Gradientes e efeitos */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/80 to-blue-950/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.15),transparent_90%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(20,184,166,0.1),transparent_90%)]" />
 
-  <div className="absolute inset-0 flex items-center justify-center opacity-5 z-0 pt-20">
-    <img
-      src="/logowhite2.png"
-      alt="Public Partner Logo"
-      className="h-auto w-150 max-w-4xl object-contain"
-      loading="lazy"
-    />
-  </div>
-</div>
-
-
-        <div className="container mx-auto relative z-10 text-center">
-          <div className="max-w-4xl mx-auto fade-in-section opacity-0 transition-all duration-1000">
-            {/* <div className="inline-flex items-center px-6 py-2 bg-slate-950/50 backdrop-blur-sm border border-[#49B5EA]/30 rounded-full mb-8">
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Nossa História</span>
-            </div> */}
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-12 font-bold mb-6 leading-tight">
-              <span className="block text-white">Sobre a </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
-                Public Partner
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-[#C5E8FA] leading-relaxed mb-12 max-w-3xl mx-auto">
-              Transformando desafios em oportunidades com excelência em consultoria e gestão.
-            </p>
-            
-            <Link href="#historia">
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-[#49B5EA]/25 transition-all duration-300 hover:scale-105"
-                onClick={handleScrollToHistory}
-              >
-                Conheça nossa história
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+          {/* Marca d'água */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-5">
+            <img
+              src="/logowhite2.png"
+              alt="Public Partner Logo"
+              className="h-auto w-full max-w-6xl object-contain"
+              loading="lazy"
+            />
           </div>
+        </motion.div>
+
+        {/* Elementos flutuantes decorativos */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-blue-400/20 rounded-lg"
+              style={{
+                left: `${15 + i * 14}%`,
+                top: `${25 + i * 10}%`,
+              }}
+              animate={{
+                y: [0, -25, 0],
+                opacity: [0.2, 0.6, 0.2],
+              }}
+              transition={{
+                duration: 5,
+                delay: i * 0.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Conteúdo */}
+        <div className="max-w-5xl mx-auto relative z-10 text-center pt-10">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+            }}
+          >
+            {/* Título */}
+            
+            <h1 className="text-5xl sm:text-6xl lg:text-6xl  font-bold leading-tight mb-8 tracking-tight">
+              Sobre a{" "}
+              <span className="relative">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#44B6EA] via-[#8FD4F7] to-[#44B6EA]">
+                  Public Partner
+                </span>
+                <motion.div
+                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#44B6EA] to-[#8FD4F7]"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                />
+              </span>{" "}
+            </h1>
+
+            {/* Subtítulo */}
+            {/* <p className="max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl leading-relaxed text-[#C5E8FA] mb-12 font-light">
+              Oferecemos soluções educacionais customizadas, alinhadas às demandas
+              institucionais, para transformar conhecimento em resultados efetivos e
+              inovação na administração pública.
+            </p> */}
+
+            {/* Botões */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link
+                href="#servicos"
+                className="group relative px-10 py-4 bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/25 transform hover:-translate-y-1"
+              >
+                <span className="relative z-10">Conheça nossos serviços</span>
+                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                href="/contato"
+                className="group px-10 py-4 border-2 border-[#49B5EA]/50 backdrop-blur-sm text-[#49B5EA] font-semibold rounded-lg transition-all duration-300 hover:border-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950"
+              >
+                Fale conosco
+                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -109,6 +191,8 @@ export default function SobrePage() {
         <div className="container mx-auto relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="fade-in-section opacity-0 transition-all duration-1000">
+            <div className="w-20 h-1 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] mb-8" />
+
               <div className="flex items-center mb-8">
                 <div className="p-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-2xl mr-4">
                   <Calendar className="h-8 w-8 text-[#49B5EA]" />
@@ -140,7 +224,7 @@ export default function SobrePage() {
               
               <div className="mt-8">
                 <Button
-                  size="lg"
+                  size="md"
                   className="group bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
                   asChild
                 >
@@ -249,9 +333,9 @@ export default function SobrePage() {
                 </div>
               </div>
               
-              <div className="mt-8">
+              <div className="mt-10">
                 <Button
-                  size="lg"
+                  size="md"
                   className="group bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
                   asChild
                 >
@@ -281,7 +365,7 @@ export default function SobrePage() {
         
         <div className="container mx-auto relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-16">
-            {/* <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-full mb-8">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-lg mb-8">
               <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Nosso Diferencial</span>
             </div> */}
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
@@ -333,7 +417,7 @@ export default function SobrePage() {
 
         <div className="container mx-auto relative">
           <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-16">
-            {/* <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
+            {/* <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-lg mb-8 shadow-sm">
               <MapPin className="h-4 w-4 text-[#49B5EA] mr-2" />
               <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Atuação Nacional</span>
             </div> */}
@@ -388,10 +472,11 @@ export default function SobrePage() {
       </section>
 
       {/* CTA Final - Fundo gradiente como HomePage */}
-      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
+      <section className="py-32 px-6 md:px-12 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+        {/* Background effects */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(73,181,234,0.03)_90%,transparent_100%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.1),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(14,165,233,0.1),transparent_70%)]" />
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
@@ -403,31 +488,54 @@ export default function SobrePage() {
           />
         </div>
 
-        <div className="container mx-auto relative">
-          <div className="max-w-4xl mx-auto text-center fade-in-section opacity-0 transition-all duration-1000">
-            {/* <div className="inline-flex items-center px-6 py-2 bg-white border border-[#49B5EA]/30 rounded-full mb-8 shadow-sm">
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Pronto para Transformar?</span>
-            </div> */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="text-slate-900">Vamos </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
-                Construir Juntos
-              </span>
-            </h2>
-            <p className="text-lg text-slate-700 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Nossa equipe está pronta para entender seus desafios e propor soluções personalizadas para seu negócio ou instituição.
-            </p>
-            <Button
-              size="lg"
-              className="group bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white px-10 py-6 text-lg font-semibold shadow-xl hover:shadow-[#49B5EA]/30 transition-all duration-300 hover:scale-[1.03]"
-              asChild
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-5xl md:text-6xl font-bold mb-8 text-gray-900"
             >
-              <Link href="/contato">
-                Entre em contato agora
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              Vamos <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-500">Construir Juntos</span>
+            </motion.h2>
+
+            <motion.p
+              variants={fadeInUp}
+              custom={1}
+              className="text-xl text-gray-700 mb-16 max-w-3xl mx-auto leading-relaxed"
+            >
+              Nosso time está preparado para entender suas demandas específicas e desenvolver 
+              a solução mais adequada para o contexto da sua instituição.
+              <span className="block mt-4 font-semibold text-cyan-600">
+                Entre em contato e converse com um dos nossos especialistas.
+              </span>
+            </motion.p>
+
+            <motion.div
+              variants={fadeInUp}
+              custom={2}
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            >
+              <Link
+                href="/contato"
+                className="group relative px-16 py-6 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-2"
+              >
+                <span className="relative z-10">Entre em contato agora</span>
+                <ArrowRight className="inline ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 transition-opacity" />
               </Link>
-            </Button>
-          </div>
+
+              <Link
+                href="/servicos"
+                className="group px-12 py-6 border-2 border-blue-600/30 text-blue-600 font-semibold text-lg rounded-lg transition-all duration-300 hover:border-blue-600/50 hover:bg-blue-50"
+              >
+                Conheça nossos serviços
+                <ChevronRight className="inline ml-4 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>
