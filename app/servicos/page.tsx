@@ -13,18 +13,19 @@ import {
 } from "lucide-react";
 
 
-const fadeInUp: Variants = {
+const fadeInUp: any = {
   hidden: { opacity: 0, y: 60 },
   visible: (custom = 0) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      delay: custom * 0.12,
-      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number], // tipagem correta
-      duration: 0.8,
+    transition: { 
+      delay: custom * 0.12, 
+      ease: [0.25, 0.1, 0.25, 1], 
+      duration: 0.8 
     },
   }),
 };
+
 
 
 const slideInFromLeft = {
