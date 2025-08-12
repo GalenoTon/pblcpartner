@@ -14,8 +14,8 @@ const fadeInUp: any = {
     opacity: 1,
     y: 0,
     transition: { 
-      delay: custom * 0.12, 
-      ease: [0.25, 0.1, 0.25, 1], 
+      delay: custom * 0.12,
+      ease: "easeOut",
       duration: 0.8 
     },
   }),
@@ -225,7 +225,7 @@ export default function SobrePage() {
               
               <div className="mt-8">
                 <Button
-                  size="md"
+                  size="lg"
                   className="group bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
                   asChild
                 >
@@ -336,7 +336,7 @@ export default function SobrePage() {
               
               <div className="mt-10">
                 <Button
-                  size="md"
+                  size="lg"
                   className="group bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
                   asChild
                 >
