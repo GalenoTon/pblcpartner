@@ -1,21 +1,21 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 // import { Card, CardContent } from "@/components/ui/card"
 import { Users, Lightbulb, MapPin, Calendar, TrendingUp, ArrowRight, Star, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: (custom = 0) => ({
     opacity: 1,
     y: 0,
     transition: { 
       delay: custom * 0.12, 
-      ease: [0.25, 0.1, 0.25, 1], 
+      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number], 
       duration: 0.8 
     },
   }),

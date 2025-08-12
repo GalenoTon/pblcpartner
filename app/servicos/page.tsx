@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
@@ -12,19 +12,20 @@ import {
   Rocket, Globe, Timer, Layers, Briefcase
 } from "lucide-react";
 
-// Animações sofisticadas
-const fadeInUp = {
+
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: (custom = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
       delay: custom * 0.12,
-      ease: [0.25, 0.1, 0.25, 1],
-      duration: 0.8
+      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number], // tipagem correta
+      duration: 0.8,
     },
   }),
 };
+
 
 const slideInFromLeft = {
   hidden: { opacity: 0, x: -60 },

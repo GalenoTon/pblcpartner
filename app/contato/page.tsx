@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { Mail, Phone, MapPin, Clock, Send, ArrowRight, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
 import emailjs from "@emailjs/browser"
 
-const fadeInUp: any = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (custom = 0) => ({
     opacity: 1,

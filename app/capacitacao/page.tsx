@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,7 +13,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-const fadeInUp: any = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (custom = 0) => ({
     opacity: 1,
