@@ -420,32 +420,34 @@ export default function ContactPage() {
 
       {/* Mapa de Localização */}
       <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="container mx-auto relative">
-          <div className="fade-in-section opacity-0 transition-all duration-1000">
-            <h2 className="text-3xl font-bold mb-8 text-center text-slate-900">Nossa localização</h2>
+  <div className="container mx-auto relative">
+    <div className="fade-in-section opacity-0 transition-all duration-1000">
+      <h2 className="text-3xl font-bold mb-8 text-center text-slate-900">Nossa localização</h2>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 h-96">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.954140467543!2d-43.3641919242836!3d-22.98207907925891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda2c2293fa63%3A0x539cb07a5b9e926!2sAv.%20das%20Am%C3%A9ricas%2C%205000%20-%20Barra%20da%20Tijuca%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022793-081!5e0!3m2!1sen!2sbr!4v1620000000000!5m2!1sen!2sbr"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
+      <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 h-96">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.202446298362!2d-43.17862538450078!3d-22.9048179840135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f609deeea5b%3A0x8a5db9f2aeb6dcf2!2sR.%20da%20Assembl%C3%A9ia%2C%2093%20-%20Centro%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020011-001!5e0!3m2!1spt-BR!2sbr!4v1691850000000!5m2!1spt-BR!2sbr"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+        ></iframe>
 
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-lg border border-[#49B5EA]/20 shadow-lg">
-                <h3 className="font-bold text-[#49B5EA] flex items-center">
-                  <MapPin className="h-5 w-5 mr-2" />
-                  Public Partner
-                </h3>
-                <p className="text-slate-700">Av. das Américas, 5000</p>
-                <p className="text-slate-700">Barra da Tijuca - RJ</p>
-              </div>
-            </div>
-          </div>
+        <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-lg border border-[#49B5EA]/20 shadow-lg">
+          <h3 className="font-bold text-[#49B5EA] flex items-center">
+            <MapPin className="h-5 w-5 mr-2" />
+            Public Partner - Sede
+          </h3>
+          <p className="text-slate-700">Rua da Assembléia, 93 – 302/303</p>
+          <p className="text-slate-700">Ed. INTERCAP – Centro – Rio de Janeiro/RJ</p>
+          <p className="text-slate-700">CEP 20011-001</p>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Final */}
       <section className="py-32 px-6 md:px-12 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
