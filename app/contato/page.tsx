@@ -341,12 +341,11 @@ export default function ContactPage() {
         </div>
         <div>
           <h3 className="font-bold text-slate-800 mb-1">E-mail</h3>
-          <p className="text-slate-700">contato@publicpartner.com.br</p>
           <p className="text-slate-700">comercial@publicpartner.com.br</p>
         </div>
       </div>
 
-      <div className="flex items-start">
+      {/* <div className="flex items-start">
         <div className="bg-[#49B5EA]/10 p-3 rounded-lg mr-4 flex-shrink-0">
           <Phone className="h-6 w-6 text-[#49B5EA]" />
         </div>
@@ -355,7 +354,7 @@ export default function ContactPage() {
           <p className="text-slate-700">(21) 1234-5678</p>
           <p className="text-slate-700">(21) 98765-4321 (WhatsApp)</p>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex items-start">
         <div className="bg-[#49B5EA]/10 p-3 rounded-lg mr-4 flex-shrink-0">
