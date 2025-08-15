@@ -18,10 +18,10 @@ const fadeInUp: any = {
   visible: (custom = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { 
+    transition: {
       delay: custom * 0.12,
       ease: "easeOut",
-      duration: 0.8 
+      duration: 0.8
     },
   }),
 };
@@ -552,7 +552,7 @@ export default function ServicosPage() {
             >
               <span className="text-slate-900">Soluções Especializadas para</span>{" "}<br></br>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
-              Desafios Complexos
+                Desafios Complexos
               </span>
             </motion.h2>
 
@@ -572,91 +572,137 @@ export default function ServicosPage() {
               {
                 image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop&q=80",
                 title: "Assessoria Técnica Especializada",
-                description: "Prestamos apoio estratégico e técnico em processos decisórios, com atuação transversal em contratações públicas, estruturação de políticas públicas, planejamento institucional e melhoria da governança.",
-                features: ["Contratações públicas estratégicas", "Estruturação de políticas públicas", "Planejamento institucional avançado", "Regulação e governança corporativa"],
+                description: "Prestamos apoio estratégico e técnico em processos decisórios, com atuação transversal em áreas como contratações públicas, estruturação de políticas públicas, planejamento institucional, regulação e melhoria da governança.",
+                features: ["Contratações públicas", "Estruturação de políticas públicas", "Planejamento institucional", "Regulação e governança"],
                 category: "Consultoria Estratégica",
-                accent: "from-cyan-500 to-blue-400",
+                accent: "from-cyan-500 to-blue-400", 
                 bgPattern: "from-cyan-50 to-blue-50"
               },
               {
                 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80",
-                title: "Apoio Técnico ao Setor Público",
+                title: "Apoio Técnico Especializado ao Setor Público",
                 description: "Oferecemos suporte contínuo a órgãos da administração direta e indireta, com foco em modernização administrativa, otimização de processos e conformidade normativa.",
-                features: ["Modernização administrativa", "Otimização de processos", "Conformidade normativa", "Suporte técnico contínuo"],
-                category: "Transformação Digital",
-                accent: "from-cyan-500 to-blue-400",
+                features: ["Modernização administrativa", "Otimização de processos", "Conformidade normativa", "Suporte técnico especializado"],
+                category: "Transformação e Gestão Pública",
+                accent: "from-cyan-500 to-blue-400", 
                 bgPattern: "from-cyan-50 to-blue-50"
               },
               {
                 image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&q=80",
-                title: "Concessões e PPPs",
+                title: "Estruturação de Modelagens para Concessões e PPPs",
                 description: "Desenvolvemos estudos, pareceres e minutas contratuais para parcerias público-privadas e concessões, com foco em segurança jurídica, atratividade do projeto e equilíbrio econômico-financeiro.",
-                features: ["Estudos de viabilidade complexos", "Pareceres técnicos especializados", "Minutas contratuais robustas", "Equilíbrio econômico-financeiro"],
+                features: ["Estudos de viabilidade", "Pareceres técnicos", "Minutas contratuais", "Equilíbrio econômico-financeiro"],
                 category: "Parcerias Estratégicas",
-                accent: "from-cyan-500 to-blue-400",
+                accent: "from-cyan-500 to-blue-400", 
                 bgPattern: "from-cyan-50 to-blue-50"
               },
               {
                 image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&q=80",
-                title: "Planos Municipais",
+                title: "Elaboração e Análise de Planos Municipais",
                 description: "Atuamos na concepção e na avaliação de planos estratégicos municipais, como Planos de Mobilidade Urbana, Saneamento, Resíduos Sólidos, Cultura, Educação e Desenvolvimento Econômico.",
                 features: ["Planos de Mobilidade Urbana", "Saneamento e Resíduos Sólidos", "Cultura e Educação", "Desenvolvimento Econômico"],
                 category: "Planejamento Urbano",
-                accent: "from-cyan-500 to-blue-400",
+                accent: "from-cyan-500 to-blue-400", 
                 bgPattern: "from-cyan-50 to-blue-50"
               },
               {
                 image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80",
-                title: "Planos de Desestatização",
+                title: "Elaboração de Planos de Desestatização",
                 description: "Apoiamos governos municipais e estaduais na estruturação de projetos de desestatização, com foco na eficiência dos serviços públicos, no valor agregado à gestão e no respeito às normativas de controle.",
-                features: ["Projetos de desestatização", "Eficiência dos serviços públicos", "Valor agregado à gestão", "Conformidade com normativas"],
+                features: ["Projetos de desestatização", "Eficiência dos serviços públicos", "Valor agregado à gestão", "Conformidade normativa"],
                 category: "Reestruturação",
-                accent: "from-cyan-500 to-blue-400",
+                accent: "from-cyan-500 to-blue-400", 
                 bgPattern: "from-cyan-50 to-blue-50"
               },
               {
-                image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&h=600&fit=crop&q=80",
-                title: "Soluções em Tecnologia da Informação",
+                image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop&q=80",
+                title: "Estudos e Levantamentos Técnicos",
+                description: "Realizamos diagnósticos, estudos setoriais, levantamentos de campo e análises estratégicas que subsidiam a tomada de decisão em políticas públicas, contratações e reestruturações institucionais.",
+                features: ["Diagnósticos técnicos", "Estudos setoriais", "Levantamentos de campo", "Análises estratégicas"],
+                category: "Consultoria Técnica",
+                accent: "from-cyan-500 to-blue-400", 
+                bgPattern: "from-cyan-50 to-blue-50"
+              },
+              {
+                image: "https://images.unsplash.com/photo-1711097383282-28097ae16b1d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                title: "Reequilíbrio Econômico-Financeiro em Contratos Públicos e Privados",
+                description: "Avaliamos e fundamentamos pedidos de reequilíbrio contratual com base em análises técnicas e jurídicas robustas, garantindo a sustentabilidade dos contratos e a equidade entre as partes.",
+                features: ["Análises técnicas e jurídicas", "Sustentabilidade contratual", "Equidade entre as partes", "Reequilíbrio econômico-financeiro"],
+                category: "Gestão Contratual",
+                accent: "from-cyan-500 to-blue-400", 
+                bgPattern: "from-cyan-50 to-blue-50"
+              },
+              {
+                image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=600&fit=crop&q=80",
+                title: "Apoio Técnico em Gerenciamento e Fiscalização de Contratos",
+                description: "Auxiliamos na estruturação de rotinas de fiscalização, elaboração de relatórios técnicos, análises de conformidade e acompanhamento da execução contratual sob a ótica técnica e normativa.",
+                features: ["Rotinas de fiscalização", "Relatórios técnicos", "Análises de conformidade", "Acompanhamento contratual"],
+                category: "Gestão Contratual",
+                accent: "from-cyan-500 to-blue-400", 
+                bgPattern: "from-cyan-50 to-blue-50"
+              },
+              {
+                image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=600&fit=crop&q=80",
+                title: "Verificador Independente",
+                description: "Atuamos como agente técnico responsável pela verificação de desempenho contratual em projetos de concessões e parcerias, assegurando transparência, rigor técnico e cumprimento de metas pactuadas, incluindo atuação como Verificador Independente do Maracanã.",
+                features: ["Verificação de desempenho contratual", "Transparência e rigor técnico", "Cumprimento de metas", "Experiência no Maracanã"],
+                category: "Controle e Auditoria",
+                accent: "from-cyan-500 to-blue-400", 
+                bgPattern: "from-cyan-50 to-blue-50"
+              },
+              {
+                image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&q=80",
+                title: "Projetos e Soluções em Tecnologia da Informação",
                 description: "Apoiamos a transformação digital na administração pública e privada por meio da concepção e implementação de soluções tecnológicas personalizadas, integradas à gestão e à prestação de serviços.",
-                features: ["Transformação digital", "Soluções personalizadas", "Integração à gestão", "Prestação de serviços digitais"],
+                features: ["Transformação digital", "Soluções personalizadas", "Integração à gestão", "Serviços digitais"],
                 category: "Tecnologia & Inovação",
-                accent: "from-cyan-500 to-blue-400",
+                accent: "from-cyan-500 to-blue-400", 
+                bgPattern: "from-cyan-50 to-blue-50"
+              },
+              {
+                image: "https://images.unsplash.com/photo-1633158829875-e5316a358c6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                title: "Sustentabilidade e Economia Verde",
+                description: "Elaboramos e acompanhamos projetos voltados à promoção do desenvolvimento sustentável, integrando inovação, responsabilidade ambiental e viabilidade econômica.",
+                features: ["Desenvolvimento sustentável", "Inovação verde", "Responsabilidade ambiental", "Viabilidade econômica"],
+                category: "Sustentabilidade",
+                accent: "from-cyan-500 to-blue-400", 
                 bgPattern: "from-cyan-50 to-blue-50"
               }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                custom={i}
-                variants={fadeInUp}
-                className="group max-w-6xl mx-auto"
-              >
-                <div className={`relative bg-white/70 backdrop-blur-xl border border-white/20 rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-700 ${i % 2 === 0 ? '' : ''
-                  }`}>
-                  {/* Background gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.bgPattern} opacity-0 group-hover:opacity-30 transition-opacity duration-700`}></div>
-
-                  <div className={`flex flex-col lg:flex-row min-h-[450px] ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+            ]
+              .map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  custom={i}
+                  variants={fadeInUp}
+                  className="group max-w-6xl mx-auto"
+                >
+                  <div className={`relative bg-white/70 backdrop-blur-xl border border-white/20 rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-700 ${i % 2 === 0 ? '' : ''
                     }`}>
+                    {/* Background gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.bgPattern} opacity-0 group-hover:opacity-30 transition-opacity duration-700`}></div>
 
-                    {/* Image Section */}
-                    <div className="w-full lg:w-[45%] relative overflow-hidden">
-                      <div className="absolute inset-0">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                          loading="lazy"
-                        />
-                        {/* Modern overlay */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${item.accent} opacity-20 group-hover:opacity-30 transition-opacity duration-700`}></div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                      </div>
+                    <div className={`flex flex-col lg:flex-row min-h-[450px] ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                      }`}>
 
-                      {/* Category badge */}
-                      {/* <div className={`absolute top-8 ${i % 2 === 0 ? 'right-8' : 'left-8'}`}>
+                      {/* Image Section */}
+                      <div className="w-full lg:w-[45%] relative overflow-hidden">
+                        <div className="absolute inset-0">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                            loading="lazy"
+                          />
+                          {/* Modern overlay */}
+                          <div className={`absolute inset-0 bg-gradient-to-br ${item.accent} opacity-20 group-hover:opacity-30 transition-opacity duration-700`}></div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                        </div>
+
+                        {/* Category badge */}
+                        {/* <div className={`absolute top-8 ${i % 2 === 0 ? 'right-8' : 'left-8'}`}>
                         <div className={`bg-gradient-to-r ${item.accent} text-white px-4 py-2.5 rounded-full text-sm font-bold shadow-lg backdrop-blur-sm border border-white/20`}>
                           <span className="flex items-center gap-2">
                             <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
@@ -665,30 +711,30 @@ export default function ServicosPage() {
                         </div>
                       </div> */}
 
-                      {/* Decorative corner */}
-                      {/* <div className={`absolute bottom-0 ${i % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-gradient-to-tl ${item.accent} opacity-10 group-hover:opacity-20 transition-opacity duration-700`}></div> */}
-                    </div>
+                        {/* Decorative corner */}
+                        {/* <div className={`absolute bottom-0 ${i % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-gradient-to-tl ${item.accent} opacity-10 group-hover:opacity-20 transition-opacity duration-700`}></div> */}
+                      </div>
 
-                    {/* Content Section */}
-                    <div className="w-full lg:w-[55%] p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative">
-                      {/* Number indicator */}
-                      {/* <div className="absolute top-6 left-6 lg:top-8 lg:left-8">
+                      {/* Content Section */}
+                      <div className="w-full lg:w-[55%] p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative">
+                        {/* Number indicator */}
+                        {/* <div className="absolute top-6 left-6 lg:top-8 lg:left-8">
                         <div className={`w-12 h-12 bg-gradient-to-br ${item.accent} rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                           {String(i + 1).padStart(2, '0')}
                         </div>
                       </div> */}
 
-                      <div className="mt-8 lg:mt-0">
-                        <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 text-slate-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-cyan-600 transition-all duration-700 leading-tight">
-                          {item.title}
-                        </h3>
+                        <div className="mt-8 lg:mt-0">
+                          <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 text-slate-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-cyan-600 transition-all duration-700 leading-tight">
+                            {item.title}
+                          </h3>
 
-                        <p className="text-slate-600 leading-relaxed text-base lg:text-lg mb-6 group-hover:text-slate-700 transition-colors duration-500">
-                          {item.description}
-                        </p>
+                          <p className="text-slate-600 leading-relaxed text-base lg:text-lg mb-6 group-hover:text-slate-700 transition-colors duration-500">
+                            {item.description}
+                          </p>
 
-                        {/* Features list */}
-                        {/* <div className="mb-8">
+                          {/* Features list */}
+                          {/* <div className="mb-8">
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {item.features.map((feature, idx) => (
                               <div key={idx} className="flex items-center gap-3 text-sm text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
@@ -699,33 +745,33 @@ export default function ServicosPage() {
                           </div>
                         </div> */}
 
-                        {/* Modern CTA */}
-                        <div className="flex items-center gap-4">
-                          <Button
-                            size="lg"
-                            className="group bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
-                            asChild
-                          >
-                            <Link href="/contato">
-                              Fale com nossa equipe
-                              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                          </Button>
+                          {/* Modern CTA */}
+                          <div className="flex items-center gap-4">
+                            <Button
+                              size="lg"
+                              className="group bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
+                              asChild
+                            >
+                              <Link href="/contato">
+                                Fale com nossa equipe
+                                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                              </Link>
+                            </Button>
 
-                          {/* <div className="flex items-center gap-2 text-slate-500 text-sm">
+                            {/* <div className="flex items-center gap-2 text-slate-500 text-sm">
                             <div className={`w-8 h-1 bg-gradient-to-r ${item.accent} rounded-full`}></div>
                             <span className="font-medium">Consulte nossos especialistas</span>
                           </div> */}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Glassmorphism effect on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]"></div>
-                </div>
-              </motion.div>
-            ))}
+                    {/* Glassmorphism effect on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]"></div>
+                  </div>
+                </motion.div>
+              ))}
           </div>
         </div>
       </section>
