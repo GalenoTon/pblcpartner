@@ -644,7 +644,7 @@ export default function ServicosPage() {
               {
                 image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=600&fit=crop&q=80",
                 title: "Verificador Independente",
-                description: "Atuamos como agente técnico responsável pela verificação de desempenho contratual em projetos de concessões e parcerias, assegurando transparência, rigor técnico e cumprimento de metas pactuadas, incluindo atuação como Verificador Independente do Maracanã.",
+                description: "Atuamos como agente técnico responsável pela verificação de desempenho contratual em projetos de concessões e parcerias, assegurando transparência, rigor técnico e cumprimento de metas pactuadas.",
                 features: ["Verificação de desempenho contratual", "Transparência e rigor técnico", "Cumprimento de metas", "Experiência no Maracanã"],
                 category: "Controle e Auditoria",
                 accent: "from-cyan-500 to-blue-400", 
