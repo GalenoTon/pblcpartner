@@ -633,7 +633,7 @@ export default function ServicosPage() {
                 bgPattern: "from-cyan-50 to-blue-50"
               },
               {
-                image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=600&fit=crop&q=80",
+                image: "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "Apoio Técnico em Gerenciamento e Fiscalização de Contratos",
                 description: "Auxiliamos na estruturação de rotinas de fiscalização, elaboração de relatórios técnicos, análises de conformidade e acompanhamento da execução contratual sob a ótica técnica e normativa.",
                 features: ["Rotinas de fiscalização", "Relatórios técnicos", "Análises de conformidade", "Acompanhamento contratual"],
