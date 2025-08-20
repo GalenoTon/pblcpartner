@@ -341,7 +341,7 @@ export default function ServicosPage() {
             }}
           >
             {/* Título - melhor responsividade */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-6 sm:mb-8 tracking-tight px-2">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-6 sm:mb-8 tracking-tight px-2 pt-14">
               Nossos{" "}
               <span className="relative inline-block">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">

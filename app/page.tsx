@@ -84,7 +84,7 @@ export default function HomePage() {
 
         <div className="container mx-auto relative z-10 text-center lg:text-left max-w-7xl">
           <div className="max-w-none lg:max-w-4xl fade-in-section opacity-0 transition-all duration-1000">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight pt-12 sm:pt-6 lg:pt-10">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight pt-12 sm:pt-6 lg:pt-10 text-left">
               <span className="block text-white">Transformamos</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
                 Desafios em Soluções
@@ -95,7 +95,7 @@ export default function HomePage() {
             </h1>
 
             <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12 max-w-none sm:max-w-2xl mx-auto lg:mx-0">
-              <p className="text-md sm:text-xl md:text-2xl text-[#C5E8FA] leading-relaxed px-2 sm:px-0">
+              <p className="text-md sm:text-xl md:text-2xl text-[#C5E8FA] leading-relaxed px-2 sm:px-0 text-left">
                 A Public Partner oferece soluções estratégicas com foco em inovação, eficiência e excelência na gestão
                 pública e privada.
               </p>
@@ -364,7 +364,7 @@ export default function HomePage() {
             <motion.p
               variants={fadeInUp}
               custom={1}
-              className="text-lg sm:text-xl text-gray-700 mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
+              className="text-lg sm:text-xl text-gray-700 mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 text-justify"
             >
               Nosso time está preparado para entender suas demandas específicas e desenvolver
               a solução mais adequada para o contexto da sua instituição.

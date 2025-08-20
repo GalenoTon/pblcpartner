@@ -396,21 +396,21 @@ export default function CapacitacaoPage() {
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.15),transparent_70%)] pointer-events-none"></div>
 
   <div className="relative z-10">
-    <p className="text-lg text-cyan-700 mb-6">
-      Para mais detalhes sobre nossos cursos, acesse:
-    </p>
+  <p className="text-lg text-cyan-700 mb-6 sm:text-center">
+    Para mais detalhes sobre nossos cursos, acesse:
+  </p>
 
-    <a
-      href="https://www.publictrainer.com.br"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative inline-flex items-center justify-center px-12 py-4 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold text-base rounded-lg transition-all duration-300 shadow-xl hover:shadow-blue-500/25 transform hover:-translate-y-2"
-    >
-      <span className="relative z-10">www.publictrainer.com.br</span>
-      <ExternalLink className="inline ml-3 w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 transition-opacity" />
-    </a>
-  </div>
+  <a
+    href="https://www.publictrainer.com.br"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative inline-flex items-center justify-center px-6 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-xl hover:shadow-blue-500/25 transform hover:-translate-y-2 w-full sm:w-auto"
+  >
+    <span className="relative z-10">www.publictrainer.com.br</span>
+    <ExternalLink className="inline ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1.5 transition-transform" />
+    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 transition-opacity" />
+  </a>
+</div>
 </section>
 
 

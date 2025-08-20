@@ -131,7 +131,7 @@ export default function SobrePage() {
             }}
           >
             {/* Título - melhor responsividade */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 pt-12 sm:mb-8 tracking-tight">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 pt-14 sm:mb-8 tracking-tight">
               Sobre a{" "}
               <span className="relative inline-block">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#44B6EA] via-[#8FD4F7] to-[#44B6EA]">
@@ -295,7 +295,7 @@ export default function SobrePage() {
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-900 text-center lg:text-left">Crescimento Contínuo</h3>
-              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed text-center lg:text-left">
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed text-center lg:text-left text-left">
                 <p>
                   Hoje, dez anos após sua fundação, a Public Partner consolida sua presença no mercado como uma empresa
                   moderna, com foco em soluções inteligentes e orientadas por resultados reais.
