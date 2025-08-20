@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useEffect, useRef } from "react"
@@ -20,7 +21,6 @@ const fadeInUp: any = {
     },
   }),
 };
-
 
 export default function SobrePage() {
   const { scrollYProgress } = useScroll();
@@ -55,8 +55,8 @@ export default function SobrePage() {
 
   return (
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
-      {/* Hero Section - Mesmo padrão da HomePage */}
-      <section className="relative min-120px sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+      {/* Hero Section - Melhorada responsividade */}
+      <section className="relative min-h-[85vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-16 sm:py-20 md:py-24">
         {/* Fundo com vídeo e overlays */}
         <motion.div
           className="absolute inset-0 z-0"
@@ -90,18 +90,18 @@ export default function SobrePage() {
             <img
               src="/logowhite2.png"
               alt="Public Partner Logo"
-              className="h-auto w-full max-w-6xl object-contain"
+              className="h-auto w-full max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-6xl object-contain px-4"
               loading="lazy"
             />
           </div>
         </motion.div>
 
-        {/* Elementos flutuantes decorativos */}
+        {/* Elementos flutuantes decorativos - ajustados para mobile */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-blue-400/20 rounded-lg"
+              className="absolute w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-blue-400/20 rounded-lg"
               style={{
                 left: `${15 + i * 14}%`,
                 top: `${25 + i * 10}%`,
@@ -121,7 +121,7 @@ export default function SobrePage() {
         </div>
 
         {/* Conteúdo */}
-        <div className="max-w-5xl mx-auto relative z-10 text-center pt-10">
+        <div className="w-full max-w-5xl mx-auto relative z-10 text-center">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -130,16 +130,15 @@ export default function SobrePage() {
               visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
             }}
           >
-            {/* Título */}
-            
-            <h1 className="text-5xl sm:text-6xl lg:text-6xl  font-bold leading-tight mb-8 tracking-tight">
+            {/* Título - melhor responsividade */}
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 pt-12 sm:mb-8 tracking-tight">
               Sobre a{" "}
-              <span className="relative">
+              <span className="relative inline-block">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#44B6EA] via-[#8FD4F7] to-[#44B6EA]">
                   Public Partner
                 </span>
                 <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#44B6EA] to-[#8FD4F7]"
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-[#44B6EA] to-[#8FD4F7]"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
@@ -147,65 +146,59 @@ export default function SobrePage() {
               </span>{" "}
             </h1>
 
-            {/* Subtítulo */}
-            {/* <p className="max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl leading-relaxed text-[#C5E8FA] mb-12 font-light">
-              Oferecemos soluções educacionais customizadas, alinhadas às demandas
-              institucionais, para transformar conhecimento em resultados efetivos e
-              inovação na administração pública.
-            </p> */}
-
-            {/* Botões */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {/* Botões - stack vertical em mobile */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full max-w-lg sm:max-w-none mx-auto">
               <Link
-                href="#servicos"
-                className="group relative px-10 py-4 bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/25 transform hover:-translate-y-1"
+                href="#historia"
+                onClick={handleScrollToHistory}
+                className="group relative w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/25 transform hover:-translate-y-1 text-center text-sm sm:text-base"
               >
-                <span className="relative z-10">Conheça nossos serviços</span>
-                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span className="relative z-10">Conheça nossa história</span>
+                <ArrowRight className="inline ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 href="/contato"
-                className="group px-10 py-4 border-2 border-[#49B5EA]/50 backdrop-blur-sm text-[#49B5EA] font-semibold rounded-lg transition-all duration-300 hover:border-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950"
+                className="group w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-3 sm:py-4 border-2 border-[#49B5EA]/50 backdrop-blur-sm text-[#49B5EA] font-semibold rounded-lg transition-all duration-300 hover:border-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950 text-center text-sm sm:text-base"
               >
                 Fale conosco
-                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="inline ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* História e Fundação - Fundo branco como HomePage */}
-      <section id="historia" className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
+      {/* História e Fundação - Melhorada responsividade */}
+      <section id="historia" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:60px_60px] sm:bg-[length:80px_80px] opacity-20"></div>
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
+        <div className="absolute inset-0 flex items-center justify-center opacity-5 sm:opacity-10 z-0">
           <img
             src="/justlogo.png"
             alt="Public Partner Logo"
-            className="h-250 w-auto max-w-250 object-contain"
+            className="h-32 sm:h-48 md:h-64 w-auto object-contain"
             loading="lazy"
           />
         </div>
 
-        <div className="container mx-auto relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="fade-in-section opacity-0 transition-all duration-1000">
-            <div className="w-20 h-1 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] mb-8" />
+        <div className="container mx-auto relative max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="fade-in-section opacity-0 transition-all duration-1000 order-2 lg:order-1">
+              <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] mb-6 sm:mb-8 mx-auto lg:mx-0" />
 
-              <div className="flex items-center mb-8">
-                <div className="p-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-2xl mr-4">
-                  <Calendar className="h-8 w-8 text-[#49B5EA]" />
+              <div className="flex items-center justify-center lg:justify-start mb-6 sm:mb-8">
+                <div className="p-3 sm:p-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
+                  <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-[#49B5EA]" />
                 </div>
-                <div>
-                  <h2 className="text-4xl font-bold text-slate-900">2015</h2>
-                  <p className="text-[#49B5EA] font-medium">Fundação</p>
+                <div className="text-center lg:text-left">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">2015</h2>
+                  <p className="text-[#49B5EA] font-medium text-sm sm:text-base">Fundação</p>
                 </div>
               </div>
 
-              <h3 className="text-3xl font-bold mb-6 text-slate-900">Nossa Origem</h3>
-              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-900 text-center lg:text-left">Nossa Origem</h3>
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed text-left lg:text-left">
                 <p>
                   A Public Partner nasceu em 2015, impulsionada pelo propósito de apoiar a gestão pública e privada na
                   estruturação de projetos e na implementação de soluções que combinassem técnica, responsabilidade e
@@ -223,30 +216,31 @@ export default function SobrePage() {
                 </p>
               </div>
               
-              <div className="mt-8">
+              <div className="mt-6 sm:mt-8 text-center lg:text-left">
                 <Button
                   size="lg"
-                  className="group bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
+                  className="group w-full sm:w-auto bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
                   asChild
                 >
                   <Link href="/servicos">
                     Conheça nossos serviços
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </div>
             </div>
 
-            <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300">
-              <div className="relative hover:scale-[1.02] transition-transform duration-500">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-3xl blur-2xl opacity-70 animate-pulse" />
-                <div className="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xl">
+            <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300 order-1 lg:order-2">
+              <div className="relative hover:scale-[1.02] transition-transform duration-500 max-w-md mx-auto lg:max-w-none">
+                <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl opacity-70 animate-pulse" />
+                <div className="relative bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src="/photo4.jpg" 
                     alt="Public Partner Início"
                     width={1170}
                     height={780}
                     className="w-full h-auto object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -255,52 +249,53 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Consolidação e Crescimento - Fundo gradiente como HomePage */}
-      <section className="py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
+      {/* Consolidação e Crescimento - Melhorada responsividade */}
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] relative overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(73,181,234,0.08),transparent_70%)]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(73,181,234,0.03)_90%,transparent_100%)]"></div>
         </div>
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
+        <div className="absolute inset-0 flex items-center justify-center opacity-5 sm:opacity-8 z-0">
           <img
             src="/justlogo.png"
             alt="Public Partner Logo"
-            className="h-100 w-auto max-w-100 object-contain"
+            className="h-16 sm:h-24 md:h-32 w-auto object-contain"
             loading="lazy"
           />
         </div>
 
-        <div className="container mx-auto relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="fade-in-section opacity-0 transition-all duration-1000">
-              <div className="relative hover:scale-[1.02] transition-transform duration-500">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-3xl blur-2xl opacity-70 animate-pulse" />
-                <div className="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xl">
+        <div className="container mx-auto relative max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="fade-in-section opacity-0 transition-all duration-1000 order-2 lg:order-1">
+              <div className="relative hover:scale-[1.02] transition-transform duration-500 max-w-md mx-auto lg:max-w-none">
+                <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl opacity-70 animate-pulse" />
+                <div className="relative bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src="/photo2.jpg"
                     alt="Public Partner Hoje"
                     width={1632}
                     height={1088}
                     className="w-full h-auto object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300">
-              <div className="flex items-center mb-8">
-                <div className="p-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-2xl mr-4">
-                  <TrendingUp className="h-8 w-8 text-[#49B5EA]" />
+            <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300 order-1 lg:order-2">
+              <div className="flex items-center justify-center lg:justify-start mb-6 sm:mb-8">
+                <div className="p-3 sm:p-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
+                  <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-[#49B5EA]" />
                 </div>
-                <div>
-                  <h2 className="text-4xl font-bold text-slate-900">2025</h2>
-                  <p className="text-[#49B5EA] font-medium">Consolidação</p>
+                <div className="text-center lg:text-left">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">2025</h2>
+                  <p className="text-[#49B5EA] font-medium text-sm sm:text-base">Consolidação</p>
                 </div>
               </div>
 
-              <h3 className="text-3xl font-bold mb-6 text-slate-900">Crescimento Contínuo</h3>
-              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-900 text-center lg:text-left">Crescimento Contínuo</h3>
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed text-center lg:text-left">
                 <p>
                   Hoje, dez anos após sua fundação, a Public Partner consolida sua presença no mercado como uma empresa
                   moderna, com foco em soluções inteligentes e orientadas por resultados reais.
@@ -310,39 +305,39 @@ export default function SobrePage() {
                   em três pilares:
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-[#49B5EA]/20 shadow-sm">
-                    <div className="bg-[#49B5EA]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                      <Lightbulb className="h-6 w-6 text-[#49B5EA]" />
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-4 sm:mt-6">
+                  <div className="bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-[#49B5EA]/20 shadow-sm text-center">
+                    <div className="bg-[#49B5EA]/10 w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto">
+                      <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6 text-[#49B5EA]" />
                     </div>
-                    <h4 className="font-bold text-[#49B5EA]">Conhecimento Técnico</h4>
+                    <h4 className="font-bold text-[#49B5EA] text-sm sm:text-base">Conhecimento Técnico</h4>
                   </div>
                   
-                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-[#49B5EA]/20 shadow-sm">
-                    <div className="bg-[#49B5EA]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                      <Users className="h-6 w-6 text-[#49B5EA]" />
+                  <div className="bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-[#49B5EA]/20 shadow-sm text-center">
+                    <div className="bg-[#49B5EA]/10 w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto">
+                      <Users className="h-5 w-5 sm:h-6 sm:w-6 text-[#49B5EA]" />
                     </div>
-                    <h4 className="font-bold text-[#49B5EA]">Personalização</h4>
+                    <h4 className="font-bold text-[#49B5EA] text-sm sm:text-base">Personalização</h4>
                   </div>
                   
-                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-[#49B5EA]/20 shadow-sm">
-                    <div className="bg-[#49B5EA]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                      <Star className="h-6 w-6 text-[#49B5EA]" />
+                  <div className="bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg sm:rounded-xl border border-[#49B5EA]/20 shadow-sm text-center">
+                    <div className="bg-[#49B5EA]/10 w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto">
+                      <Star className="h-5 w-5 sm:h-6 sm:w-6 text-[#49B5EA]" />
                     </div>
-                    <h4 className="font-bold text-[#49B5EA]">Compromisso</h4>
+                    <h4 className="font-bold text-[#49B5EA] text-sm sm:text-base">Compromisso</h4>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-10">
+              <div className="mt-8 sm:mt-10 text-center lg:text-left">
                 <Button
                   size="lg"
-                  className="group bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
+                  className="group w-full sm:w-auto bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
                   asChild
                 >
                   <Link href="/contato">
                     Fale com nossa equipe
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </div>
@@ -351,25 +346,22 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Diferencial e Compromisso - Fundo branco */}
-      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
+      {/* Diferencial e Compromisso - Melhorada responsividade */}
+      <section className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:60px_60px] sm:bg-[length:80px_80px] opacity-20"></div>
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
+        <div className="absolute inset-0 flex items-center justify-center opacity-5 sm:opacity-10 z-0">
           <img
             src="/justlogo.png"
             alt="Public Partner Logo"
-            className="h-250 w-auto max-w-250 object-contain"
+            className="h-32 sm:h-48 md:h-64 w-auto object-contain"
             loading="lazy"
           />
         </div>
         
-        <div className="container mx-auto relative">
-          <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-16">
-            {/* <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-lg mb-8">
-              <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">Nosso Diferencial</span>
-            </div> */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+        <div className="container mx-auto relative max-w-7xl">
+          <div className="fade-in-section opacity-0 transition-all duration-1000 text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
               <span className="text-slate-900">Excelência e </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4]">
                 Comprometimento
@@ -378,18 +370,18 @@ export default function SobrePage() {
           </div>
 
           <div className="max-w-4xl mx-auto fade-in-section opacity-0 transition-all duration-1000">
-            <div className="bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] border border-[#49B5EA]/20 rounded-2xl p-8 md:p-12 shadow-lg">
-              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+            <div className="bg-gradient-to-br from-[#E6F7FF] to-[#D1F0FF] border border-[#49B5EA]/20 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg">
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed">
                 <p>
                   Nosso diferencial está na entrega personalizada, baseada em evidências, boas práticas institucionais e 
                   resultados concretos. Trabalhamos com responsabilidade técnica e visão estratégica, sempre respeitando 
                   as singularidades de cada cliente e propondo soluções que unem inovação, legalidade e eficiência.
                 </p>
                 
-                <div className="p-6 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/20 rounded-xl mt-8">
-                  <div className="flex items-start">
-                    <Star className="h-6 w-6 text-[#49B5EA] mt-1 mr-3 flex-shrink-0" />
-                    <p className="text-slate-700 italic font-medium">
+                <div className="p-4 sm:p-6 bg-gradient-to-r from-[#49B5EA]/10 to-[#7ACCF4]/10 border border-[#49B5EA]/20 rounded-lg sm:rounded-xl mt-6 sm:mt-8">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center">
+                    <Star className="h-5 w-5 sm:h-6 sm:w-6 text-[#49B5EA] mt-1 mb-2 sm:mb-0 sm:mr-3 flex-shrink-0 mx-auto sm:mx-0" />
+                    <p className="text-slate-700 italic font-medium text-center sm:text-left">
                       A Public Partner é mais que uma empresa: é uma parceira comprometida com a transformação e o 
                       fortalecimento institucional.
                     </p>
@@ -434,7 +426,7 @@ export default function SobrePage() {
               </span>
             </h2>
 
-            <div className="max-w-4xl mx-auto space-y-6 text-lg text-slate-700 leading-relaxed">
+            <div className="max-w-4xl mx-auto space-y-6 text-lg text-slate-700 leading-relaxed text-left">
               <p>
                 Apesar de termos sede no Rio de Janeiro, nossa atuação é nacional. Estamos prontos para atender
                 instituições públicas e privadas em todo o Brasil, com profissionais altamente capacitados, que combinam
@@ -505,7 +497,7 @@ export default function SobrePage() {
             <motion.p
               variants={fadeInUp}
               custom={1}
-              className="text-xl text-gray-700 mb-16 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl text-gray-700 mb-16 max-w-3xl mx-auto leading-relaxed text-left"
             >
               Nosso time está preparado para entender suas demandas específicas e desenvolver 
               a solução mais adequada para o contexto da sua instituição.

@@ -19,7 +19,6 @@ const fadeInUp: any = {
   }),
 };
 
-
 export default function HomePage() {
   const observerRef = useRef<IntersectionObserver | null>(null)
 
@@ -52,8 +51,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
-      {/* Hero Section - FUNDO MANTIDO COMO ESTÁ */}
-      <section className="relative min-h-screen flex items-center justify-left overflow-hidden bg-slate-950 text-white px-6 md:px-12 lg:px-16 xl:px-24 py-24">
+      {/* Hero Section - Melhorada responsividade */}
+      <section className="relative min-h-screen flex items-center justify-center lg:justify-left overflow-hidden bg-slate-950 text-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-16 sm:py-20 md:py-24">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -77,15 +76,15 @@ export default function HomePage() {
             <img
               src="/logowhite2.png"
               alt="Public Partner Logo"
-              className="h-auto w-full max-w-4xl object-contain"
+              className="h-auto w-full max-w-2xl sm:max-w-3xl md:max-w-4xl object-contain px-4"
               loading="lazy"
             />
           </div>
         </div>
 
-        <div className="container mx-auto relative z-10 text-left">
-          <div className="max-w-4xl fade-in-section opacity-0 transition-all duration-1000">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight pt-10">
+        <div className="container mx-auto relative z-10 text-center lg:text-left max-w-7xl">
+          <div className="max-w-none lg:max-w-4xl fade-in-section opacity-0 transition-all duration-1000">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight pt-12 sm:pt-6 lg:pt-10">
               <span className="block text-white">Transformamos</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
                 Desafios em Soluções
@@ -95,66 +94,53 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <div className="space-y-6 mb-12 max-w-2xl">
-              <p className="text-xl md:text-2xl text-[#C5E8FA] leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12 max-w-none sm:max-w-2xl mx-auto lg:mx-0">
+              <p className="text-md sm:text-xl md:text-2xl text-[#C5E8FA] leading-relaxed px-2 sm:px-0">
                 A Public Partner oferece soluções estratégicas com foco em inovação, eficiência e excelência na gestão
                 pública e privada.
               </p>
-
-              {/* <div className="flex items-left justify-left space-x-3 text-[#49B5EA]">
-                <ArrowRight className="h-5 w-5 flex-shrink-0" />
-                <p className="text-lg md:text-xl font-medium">
-                  Experiência, técnica e visão de futuro aplicadas aos seus desafios.
-                </p>
-              </div> */}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-left items-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-center px-2 sm:px-0">
               <Link
                 href="/servicos"
-                className="group relative px-10 py-4 bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/25 transform hover:-translate-y-1"
+                className="group relative w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/25 transform hover:-translate-y-1 text-center"
               >
                 <span className="relative z-10">Conheça nossos serviços</span>
-                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="inline ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 href="/contato"
-                className="group px-10 py-4 border-2 border-[#49B5EA]/50 backdrop-blur-sm text-[#49B5EA] font-semibold rounded-lg transition-all duration-300 hover:border-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950"
+                className="group w-full sm:w-auto px-6 sm:px-8 lg:px-10 py-3 sm:py-4 border-2 border-[#49B5EA]/50 backdrop-blur-sm text-[#49B5EA] font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 hover:border-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950 text-center"
               >
                 Fale conosco
-                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="inline ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24 bg-white relative overflow-hidden px-6 md:px-12 lg:px-16 xl:px-24">
+      {/* About Section - Melhorada responsividade */}
+      <section className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(73,181,234,0.03)_50%,transparent_75%)] bg-[length:80px_80px] opacity-20"></div>
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 z-0">
+        <div className="absolute inset-0 flex items-center justify-center opacity-5 sm:opacity-10 z-0">
           <img
             src="/justlogo.png"
             alt="Public Partner Logo"
-            className="h-250 w-auto max-w-250 object-contain"
+            className="h-32 sm:h-48 md:h-64 w-auto object-contain"
             loading="lazy"
           />
         </div>
 
-        <div className="container mx-auto relative">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
-            <div className="lg:w-1/2 fade-in-section opacity-0 transition-all duration-1000">
-              {/* <div className="inline-flex items-center px-6 py-2 bg-[#E6F7FF] border border-[#49B5EA]/30 rounded-lg mb-8">
-                <span className="text-sm font-medium text-[#49B5EA] tracking-wider uppercase">
-                  Posicionamento Institucional
-                </span>
-              </div> */}
-              <div className="w-20 h-1 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] mb-8" />
+        <div className="container mx-auto relative max-w-7xl">
+          <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-16 xl:gap-24 items-center">
+            <div className="w-full lg:w-1/2 fade-in-section opacity-0 transition-all duration-1000 text-center lg:text-left">
+              <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] mb-6 sm:mb-8 mx-auto lg:mx-0" />
 
-
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
                 <span className="text-slate-900">Conectamos </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#7ACCF4] to-[#49B5EA]">
                   conhecimento, estratégia
@@ -162,7 +148,7 @@ export default function HomePage() {
                 <span className="text-slate-900"> e resultados</span>
               </h2>
 
-              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 <p>
                   Somos uma empresa de consultoria, assessoria e capacitação especializada no setor público. Atuamos com
                   excelência em contratações públicas, defesa técnica perante órgãos de controle, estruturação de projetos
@@ -176,20 +162,20 @@ export default function HomePage() {
 
               <Button
                 size="lg"
-                className="group mt-8 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-8 py-4 text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
+                className="group mt-6 sm:mt-8 w-full sm:w-auto bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold hover:from-[#3EA5D8] hover:to-[#6AC2F0] transition-all duration-300"
                 asChild
               >
                 <Link href="/sobre">
                   Saiba mais sobre nós
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
 
-            <div className="lg:w-1/2 fade-in-section opacity-0 transition-all duration-1000 delay-300">
-              <div className="relative hover:scale-[1.02] transition-transform duration-500">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-3xl blur-2xl opacity-70 animate-pulse" />
-                <div className="relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xl">
+            <div className="w-full lg:w-1/2 fade-in-section opacity-0 transition-all duration-1000 delay-300 mt-8 lg:mt-0">
+              <div className="relative hover:scale-[1.02] transition-transform duration-500 max-w-md mx-auto lg:max-w-none">
+                <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl opacity-70 animate-pulse" />
+                <div className="relative bg-white border border-slate-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl">
                   <img
                     src="espaco.jpg"
                     alt="Espaço de reunião moderno da Public Partner"
@@ -203,75 +189,70 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+      {/* Services Section - Melhorada responsividade */}
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-100/30 to-indigo-100/30 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-blue-400/10 rounded-full blur-2xl sm:blur-3xl"></div>
+          <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-indigo-400/10 rounded-full blur-2xl sm:blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] sm:w-[600px] sm:h-[300px] lg:w-[800px] lg:h-[400px] bg-gradient-to-r from-blue-100/30 to-indigo-100/30 rounded-full blur-2xl sm:blur-3xl"></div>
         </div>
 
         {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-20 sm:opacity-30">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
+            backgroundSize: '30px 30px sm:40px 40px'
           }}></div>
         </div>
 
-        <div className="container mx-auto px-6 md:px-8 lg:px-12 xl:px-16 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-10 max-w-7xl">
           {/* Header Section */}
-          <div className="text-center max-w-4xl mx-auto mb-24">
-            {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200/50 rounded-full mb-8 shadow-sm hover:shadow-md transition-all duration-300">
-        <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-        <span className="text-sm font-semibold text-blue-700 tracking-wide uppercase">Nossas Especialidades</span>
-      </div> */}
-
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 font-black leading-tight">
+          <div className="text-center max-w-4xl mx-auto mb-16 sm:mb-20 lg:mb-24">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 font-black leading-tight">
               <span className="text-slate-900">Áreas de </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#7ACCF4] to-[#49B5EA]">
                 Atuação
               </span>
             </h2>
 
-            <p className="text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto px-4 sm:px-0">
               Transformamos desafios complexos em soluções inovadoras através de expertise especializada e metodologias comprovadas.
             </p>
           </div>
 
           {/* Services Grid */}
-          <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {[
               {
-                icon: <ChartGantt className="h-10 w-10" />,
+                icon: <ChartGantt className="h-8 w-8 sm:h-10 sm:w-10" />,
                 title: "Consultorias Estratégicas",
                 description: "Desenvolvemos estratégias personalizadas que impulsionam a transformação digital e otimização de processos no setor público.",
                 bgImage: "photo1.jpg",
                 gradient: "from-[#49B5EA] to-cyan-500 to-cyan-700"
               },
               {
-                icon: <ClipboardList className="h-10 w-10" />,
+                icon: <ClipboardList className="h-8 w-8 sm:h-10 sm:w-10" />,
                 title: "Assessoria Técnica Especializada",
                 description: "Fornecemos suporte técnico de alta qualidade para decisões estratégicas complexas com base em dados e análises aprofundadas.",
                 bgImage: "photo2.jpg",
                 gradient: "from-[#49B5EA] to-cyan-500 to-cyan-700"
               },
               {
-                icon: <BriefcaseBusiness className="h-10 w-10" />,
+                icon: <BriefcaseBusiness className="h-8 w-8 sm:h-10 sm:w-10" />,
                 title: "Gestão de Projetos Públicos",
                 description: "Estruturamos e gerenciamos projetos públicos com metodologias ágeis, garantindo eficiência e transparência em cada etapa.",
                 bgImage: "photo3.jpg",
                 gradient: "from-[#49B5EA] to-cyan-500 to-cyan-700"
               },
               {
-                icon: <GraduationCap className="h-10 w-10" />,
+                icon: <GraduationCap className="h-8 w-8 sm:h-10 sm:w-10" />,
                 title: "Capacitação e Formação",
                 description: "Programas de capacitação inovadores que desenvolvem competências essenciais para líderes e gestores do setor público.",
                 bgImage: "photo4.jpg",
                 gradient: "from-[#49B5EA] to-cyan-500 to-cyan-700"
               },
             ].map((service, index) => (
-
               <div
                 key={index}
                 className="group cursor-pointer"
@@ -281,9 +262,8 @@ export default function HomePage() {
                   opacity: 0
                 }}
               >
-                <Link
-                  href="/servicos">
-                  <div className="relative h-[400px] rounded-3xl overflow-hidden bg-white shadow-xl hover:shadow-2xl transition-all duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.02] border border-slate-200/50">
+                <Link href="/servicos">
+                  <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white shadow-xl hover:shadow-2xl transition-all duration-700 ease-out group-hover:-translate-y-2 sm:group-hover:-translate-y-3 group-hover:scale-[1.01] sm:group-hover:scale-[1.02] border border-slate-200/50">
                     {/* Background Image */}
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -293,14 +273,14 @@ export default function HomePage() {
                     </div>
 
                     {/* Decorative Elements */}
-                    <div className="absolute top-6 right-6 w-20 h-20 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-700"></div>
-                    <div className="absolute bottom-6 left-6 w-32 h-32 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-all duration-700"></div>
+                    <div className="absolute top-4 sm:top-6 right-4 sm:right-6 w-12 h-12 sm:w-20 sm:h-20 bg-white/10 rounded-full blur-lg sm:blur-xl group-hover:bg-white/20 transition-all duration-700"></div>
+                    <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 w-20 h-20 sm:w-32 sm:h-32 bg-white/5 rounded-full blur-xl sm:blur-2xl group-hover:bg-white/10 transition-all duration-700"></div>
 
                     {/* Content */}
-                    <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                    <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col justify-between">
                       {/* Icon */}
                       <div className="inline-flex">
-                        <div className="p-4 bg-white/20 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-500">
+                        <div className="p-3 sm:p-4 bg-white/20 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-lg border border-white/20 group-hover:bg-white/30 group-hover:scale-105 sm:group-hover:scale-110 transition-all duration-500">
                           <div className="text-white transition-transform duration-500">
                             {service.icon}
                           </div>
@@ -308,21 +288,21 @@ export default function HomePage() {
                       </div>
 
                       {/* Text Content */}
-                      <div className="space-y-4">
-                        <h3 className="text-2xl font-bold text-white leading-tight group-hover:translate-y-[-2px] transition-transform duration-500">
+                      <div className="space-y-3 sm:space-y-4">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight group-hover:translate-y-[-1px] sm:group-hover:translate-y-[-2px] transition-transform duration-500">
                           {service.title}
                         </h3>
-                        <p className="text-white/90 leading-relaxed text-base group-hover:text-white transition-colors duration-500">
+                        <p className="text-white/90 leading-relaxed text-sm sm:text-base group-hover:text-white transition-colors duration-500">
                           {service.description}
                         </p>
                       </div>
 
                       {/* Action Button */}
-                      <div className="pt-6">
-                        <div className="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all duration-500 cursor-pointer">
+                      <div className="pt-4 sm:pt-6">
+                        <div className="inline-flex items-center gap-2 text-white font-semibold text-sm sm:text-base group-hover:gap-3 transition-all duration-500 cursor-pointer">
                           <span>Explorar serviço</span>
-                          <div className="p-2 bg-white/20 rounded-full group-hover:bg-white/30 group-hover:translate-x-1 transition-all duration-500">
-                            <ArrowRight className="h-4 w-4" />
+                          <div className="p-1.5 sm:p-2 bg-white/20 rounded-full group-hover:bg-white/30 group-hover:translate-x-1 transition-all duration-500">
+                            <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                           </div>
                         </div>
                       </div>
@@ -332,42 +312,38 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   </div>
                 </Link>
-
               </div>
-
             ))}
           </div>
-
-
         </div>
 
         <style jsx>{`
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  `}</style>
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 px-6 md:px-12 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+      {/* CTA Section - Melhorada responsividade */}
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.1),transparent_70%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(14,165,233,0.1),transparent_70%)]" />
         </div>
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-8 z-0">
+        <div className="absolute inset-0 flex items-center justify-center opacity-5 sm:opacity-8 z-0">
           <img
             src="/justlogo.png"
             alt="Public Partner Logo"
-            className="h-100 w-auto max-w-100 object-contain"
+            className="h-16 sm:h-24 md:h-32 w-auto object-contain"
             loading="lazy"
           />
         </div>
@@ -380,7 +356,7 @@ export default function HomePage() {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-5xl md:text-6xl font-bold mb-8 text-gray-900"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-gray-900 leading-tight"
             >
               Vamos <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-500">Construir Juntos</span>
             </motion.h2>
@@ -388,11 +364,11 @@ export default function HomePage() {
             <motion.p
               variants={fadeInUp}
               custom={1}
-              className="text-xl text-gray-700 mb-16 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl text-gray-700 mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
             >
               Nosso time está preparado para entender suas demandas específicas e desenvolver
               a solução mais adequada para o contexto da sua instituição.
-              <span className="block mt-4 font-semibold text-cyan-600">
+              <span className="block mt-3 sm:mt-4 font-semibold text-cyan-600">
                 Entre em contato e converse com um dos nossos especialistas.
               </span>
             </motion.p>
@@ -400,23 +376,23 @@ export default function HomePage() {
             <motion.div
               variants={fadeInUp}
               custom={2}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-2xl mx-auto px-4 sm:px-0"
             >
               <Link
                 href="/contato"
-                className="group relative px-16 py-6 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-2"
+                className="group relative w-full sm:w-auto px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-base sm:text-lg rounded-lg transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 sm:hover:-translate-y-2 text-center"
               >
                 <span className="relative z-10">Entre em contato agora</span>
-                <ArrowRight className="inline ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="inline ml-3 sm:ml-4 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-transform" />
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 transition-opacity" />
               </Link>
 
               <Link
                 href="/sobre"
-                className="group px-12 py-6 border-2 border-blue-600/30 text-blue-600 font-semibold text-lg rounded-lg transition-all duration-300 hover:border-blue-600/50 hover:bg-blue-50"
+                className="group w-full sm:w-auto px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 border-2 border-blue-600/30 text-blue-600 font-semibold text-base sm:text-lg rounded-lg transition-all duration-300 hover:border-blue-600/50 hover:bg-blue-50 text-center"
               >
                 Conheça nossa história
-                <ChevronRight className="inline ml-4 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="inline ml-3 sm:ml-4 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
           </motion.div>

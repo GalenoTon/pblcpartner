@@ -124,7 +124,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-120px sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+      <section className="relative min-h-[85vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
         {/* Fundo com vídeo e overlays */}
         <motion.div
           className="absolute inset-0 z-0"
@@ -157,18 +157,18 @@ export default function ContactPage() {
             <img
               src="/logowhite2.png"
               alt="Public Partner Logo"
-              className="h-auto w-full max-w-6xl object-contain"
+              className="h-auto w-full max-w-3xl sm:max-w-6xl object-contain"
               loading="lazy"
             />
           </div>
         </motion.div>
 
-        {/* Elementos flutuantes decorativos */}
+        {/* Elementos flutuantes decorativos - ajustados para mobile */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-blue-400/20 rounded-lg"
+              className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400/20 rounded-lg"
               style={{
                 left: `${15 + i * 14}%`,
                 top: `${25 + i * 10}%`,
@@ -181,31 +181,32 @@ export default function ContactPage() {
                 duration: 5,
                 delay: i * 0.4,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             />
           ))}
         </div>
 
         {/* Conteúdo */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
+        <div className="w-full max-w-7xl mx-auto relative z-10 text-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={{
               hidden: { opacity: 0, y: 40 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
             }}
           >
-            {/* Título */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-8 pt-12 tracking-tight">
-              Entre em contato com{" "}<br></br>
-              <span className="relative">
+            {/* Título - melhor responsividade */}
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-6 sm:mb-8 tracking-tight px-2 pt-4 sm:pt-12">
+              <span className="">Entre em contato com</span>
+              <br className="sm:block" />
+              <span className="relative inline-block mt-0 sm:mt-0">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
                   Nossa Equipe
                 </span>
                 <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#49B5EA] to-[#8FD4F7]"
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-[#49B5EA] to-[#8FD4F7]"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
@@ -213,8 +214,8 @@ export default function ContactPage() {
               </span>
             </h1>
 
-            {/* Subtítulo */}
-            <p className="max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl leading-relaxed text-[#C5E8FA]  font-light">
+            {/* Subtítulo - responsivo */}
+            <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-[#C5E8FA] font-light px-4">
               Estamos prontos para ajudar sua empresa ou instituição a alcançar novos patamares.
             </p>
 

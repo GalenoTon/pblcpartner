@@ -266,7 +266,7 @@ export default function ServicosPage() {
   return (
     <main className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 min-h-screen overflow-x-hidden">
       {/* Hero Section - Redesenhada com mais impacto */}
-      <section className="relative min-120px sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+      <section className="relative min-h-[85vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
         {/* Fundo com vídeo e overlays */}
         <motion.div
           className="absolute inset-0 z-0"
@@ -300,18 +300,18 @@ export default function ServicosPage() {
             <img
               src="/logowhite2.png"
               alt="Public Partner Logo"
-              className="h-auto w-full max-w-6xl object-contain"
+              className="h-auto w-full max-w-3xl sm:max-w-6xl object-contain"
               loading="lazy"
             />
           </div>
         </motion.div>
 
-        {/* Elementos flutuantes decorativos */}
+        {/* Elementos flutuantes decorativos - ajustados para mobile */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-blue-400/20 rounded-lg"
+              className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400/20 rounded-lg"
               style={{
                 left: `${15 + i * 14}%`,
                 top: `${25 + i * 10}%`,
@@ -324,31 +324,31 @@ export default function ServicosPage() {
                 duration: 5,
                 delay: i * 0.4,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             />
           ))}
         </div>
 
         {/* Conteúdo */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
+        <div className="w-full max-w-7xl mx-auto relative z-10 text-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={{
               hidden: { opacity: 0, y: 40 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
             }}
           >
-            {/* Título */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-8 tracking-tight">
+            {/* Título - melhor responsividade */}
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-6 sm:mb-8 tracking-tight px-2">
               Nossos{" "}
-              <span className="relative">
+              <span className="relative inline-block">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
                   Serviços
                 </span>
                 <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#49B5EA] to-[#8FD4F7]"
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-[#49B5EA] to-[#8FD4F7]"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
@@ -356,29 +356,29 @@ export default function ServicosPage() {
               </span>
             </h1>
 
-            {/* Subtítulo */}
-            {/* <p className="max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl leading-relaxed text-[#C5E8FA] mb-12 font-light">
+            {/* Subtítulo - comentado conforme original */}
+            {/* <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-[#C5E8FA] mb-8 sm:mb-12 font-light px-4">
               Transformamos
               <span className="text-[#49B5EA] font-medium"> desafios institucionais em oportunidades</span>
               através de soluções técnicas inovadoras e estratégicas para o setor público e privado.
             </p> */}
 
-            {/* Botões */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {/* Botões - stack vertical em mobile */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full max-w-lg sm:max-w-none mx-auto">
               <Link
                 href="#servicos"
-                className="group relative px-10 py-4 bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/25 transform hover:-translate-y-1"
+                className="group relative w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#49B5EA] to-[#2C9CDB] hover:from-[#3EA5D8] hover:to-[#1E8CC7] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#49B5EA]/25 transform hover:-translate-y-1 text-center text-sm sm:text-base"
               >
                 <span className="relative z-10">Conheça nossos serviços</span>
-                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="inline ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 href="/contato"
-                className="group px-10 py-4 border-2 border-[#49B5EA]/50 backdrop-blur-sm text-[#49B5EA] font-semibold rounded-lg transition-all duration-300 hover:border-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950"
+                className="group w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 border-2 border-[#49B5EA]/50 backdrop-blur-sm text-[#49B5EA] font-semibold rounded-lg transition-all duration-300 hover:border-[#49B5EA] hover:bg-[#49B5EA] hover:text-slate-950 text-center text-sm sm:text-base"
               >
                 Fale conosco
-                <ArrowRight className="inline ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="inline ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>
