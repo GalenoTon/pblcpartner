@@ -148,7 +148,7 @@ export default function HomePage() {
                 <span className="text-slate-900"> e resultados</span>
               </h2>
 
-              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-left">
                 <p>
                   Somos uma empresa de consultoria, assessoria e capacitação especializada no setor público. Atuamos com
                   excelência em contratações públicas, defesa técnica perante órgãos de controle, estruturação de projetos
@@ -364,7 +364,7 @@ export default function HomePage() {
             <motion.p
               variants={fadeInUp}
               custom={1}
-              className="text-lg sm:text-xl text-gray-700 mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 text-justify"
+              className="text-lg sm:text-xl text-gray-700 mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 text-left"
             >
               Nosso time está preparado para entender suas demandas específicas e desenvolver
               a solução mais adequada para o contexto da sua instituição.

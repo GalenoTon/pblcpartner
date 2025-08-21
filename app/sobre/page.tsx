@@ -183,15 +183,15 @@ export default function SobrePage() {
         </div>
 
         <div className="container mx-auto relative max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-left">
             <div className="fade-in-section opacity-0 transition-all duration-1000 order-2 lg:order-1">
               <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#49B5EA] to-[#7ACCF4] mb-6 sm:mb-8 mx-auto lg:mx-0" />
 
-              <div className="flex items-center justify-center lg:justify-start mb-6 sm:mb-8">
+              <div className="flex items-left lg:justify-start mb-6 sm:mb-8">
                 <div className="p-3 sm:p-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
                   <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-[#49B5EA]" />
                 </div>
-                <div className="text-center lg:text-left">
+                <div className="text-left lg:text-left">
                   <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">2015</h2>
                   <p className="text-[#49B5EA] font-medium text-sm sm:text-base">Fundação</p>
                 </div>
