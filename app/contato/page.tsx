@@ -124,7 +124,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[65vh] sm:min-h-[85vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+      <section className="relative min-h-[50vh] sm:min-h-[85vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
         {/* Fundo com vídeo e overlays */}
         <motion.div
           className="absolute inset-0 z-0"
@@ -188,7 +188,7 @@ export default function ContactPage() {
         </div>
 
         {/* Conteúdo */}
-        <div className="w-full max-w-7xl mx-auto relative z-10 text-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="w-full max-w-7xl mx-auto relative z-10 text-center px-4 pt-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           <motion.div
             initial="hidden"
             animate="visible"
