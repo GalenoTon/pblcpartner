@@ -3,7 +3,7 @@ import { motion, Variants } from "framer-motion";
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Play, BriefcaseBusiness, ChartGantt, ClipboardList, GraduationCap, ChevronRight } from "lucide-react"
+import { ArrowRight, Play, BriefcaseBusiness, ChartGantt, ClipboardList, GraduationCap } from "lucide-react"
 import Link from "next/link"
 
 const fadeInUp: any = {
@@ -364,7 +364,7 @@ export default function HomePage() {
             <motion.p
               variants={fadeInUp}
               custom={1}
-              className="text-lg sm:text-xl text-gray-700 mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 text-left"
+              className="text-lg sm:text-xl text-gray-700 mb-12 sm:mb-16 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 text-center"
             >
               Nosso time está preparado para entender suas demandas específicas e desenvolver
               a solução mais adequada para o contexto da sua instituição.
@@ -383,7 +383,7 @@ export default function HomePage() {
                 className="group relative w-full sm:w-auto px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-base sm:text-lg rounded-lg transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 sm:hover:-translate-y-2 text-center"
               >
                 <span className="relative z-10">Entre em contato agora</span>
-                <ArrowRight className="inline ml-3 sm:ml-4 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-transform" />
+                {/* <ArrowRight className="inline ml-3 sm:ml-4 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-transform" /> */}
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 transition-opacity" />
               </Link>
 
@@ -392,7 +392,7 @@ export default function HomePage() {
                 className="group w-full sm:w-auto px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 border-2 border-blue-600/30 text-blue-600 font-semibold text-base sm:text-lg rounded-lg transition-all duration-300 hover:border-blue-600/50 hover:bg-blue-50 text-center"
               >
                 Conheça nossa história
-                <ChevronRight className="inline ml-3 sm:ml-4 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
+                {/* <ArrowRight className="inline ml-3 sm:ml-4 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" /> */}
               </Link>
             </motion.div>
           </motion.div>

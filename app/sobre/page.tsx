@@ -4,7 +4,7 @@
 import { useEffect, useRef } from "react"
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 // import { Card, CardContent } from "@/components/ui/card"
-import { Users, Lightbulb, MapPin, Calendar, TrendingUp, ArrowRight, Star, ChevronRight } from "lucide-react"
+import { Users, Lightbulb, MapPin, Calendar, TrendingUp, ArrowRight, Star } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -196,8 +196,9 @@ export default function SobrePage() {
                   <p className="text-[#49B5EA] font-medium text-sm sm:text-base">Fundação</p>
                 </div>
               </div>
+              
 
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-900 text-center lg:text-left">Nossa Origem</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-slate-900 text-left lg:text-left">Nossa Origem</h3>
               <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed text-left lg:text-left">
                 <p>
                   A Public Partner nasceu em 2015, impulsionada pelo propósito de apoiar a gestão pública e privada na
@@ -284,13 +285,13 @@ export default function SobrePage() {
             </div>
 
             <div className="fade-in-section opacity-0 transition-all duration-1000 delay-300 order-1 lg:order-2">
-              <div className="flex items-center justify-center lg:justify-start mb-6 sm:mb-8">
+              <div className="flex items-left lg:justify-start mb-6 sm:mb-8">
                 <div className="p-3 sm:p-4 bg-gradient-to-r from-[#49B5EA]/20 to-[#7ACCF4]/20 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
                   <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-[#49B5EA]" />
                 </div>
-                <div className="text-center lg:text-left">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">2025</h2>
-                  <p className="text-[#49B5EA] font-medium text-sm sm:text-base">Consolidação</p>
+                <div className="text-left lg:text-left">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-left text-slate-900">2025</h2>
+                  <p className="text-[#49B5EA] font-medium text-left text-sm sm:text-base">Consolidação</p>
                 </div>
               </div>
 
@@ -497,7 +498,7 @@ export default function SobrePage() {
             <motion.p
               variants={fadeInUp}
               custom={1}
-              className="text-xl text-gray-700 mb-16 max-w-3xl mx-auto leading-relaxed text-left"
+              className="text-xl text-gray-700 mb-16 max-w-3xl mx-auto leading-relaxed text-center"
             >
               Nosso time está preparado para entender suas demandas específicas e desenvolver 
               a solução mais adequada para o contexto da sua instituição.
@@ -516,7 +517,7 @@ export default function SobrePage() {
                 className="group relative px-16 py-6 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-2"
               >
                 <span className="relative z-10">Entre em contato agora</span>
-                <ArrowRight className="inline ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                {/* <ArrowRight className="inline ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" /> */}
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 transition-opacity" />
               </Link>
 
@@ -525,7 +526,7 @@ export default function SobrePage() {
                 className="group px-12 py-6 border-2 border-blue-600/30 text-blue-600 font-semibold text-lg rounded-lg transition-all duration-300 hover:border-blue-600/50 hover:bg-blue-50"
               >
                 Conheça nossos serviços
-                <ChevronRight className="inline ml-4 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                {/* <ArrowRight className="inline ml-4 w-6 h-6 group-hover:translate-x-1 transition-transform" /> */}
               </Link>
             </motion.div>
           </motion.div>

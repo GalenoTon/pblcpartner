@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronRight } from "lucide-react"
+import { Menu, X, ArrowRight } from "lucide-react"
 import Image from 'next/image';
 
 export default function Header() {
@@ -136,7 +136,7 @@ export default function Header() {
                     >
                       Home
                     </span>
-                    <ChevronRight 
+                    <ArrowRight 
                       className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
                     />
                   </Link>
@@ -152,7 +152,7 @@ export default function Header() {
                     >
                       Sobre
                     </span>
-                    <ChevronRight 
+                    <ArrowRight 
                       className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
                     />
                   </Link>
@@ -168,7 +168,7 @@ export default function Header() {
                     >
                       Serviços
                     </span>
-                    <ChevronRight 
+                    <ArrowRight 
                       className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
                     />
                   </Link>
@@ -184,7 +184,7 @@ export default function Header() {
                     >
                       Capacitação
                     </span>
-                    <ChevronRight 
+                    <ArrowRight 
                       className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
                     />
                   </Link>
@@ -200,7 +200,7 @@ export default function Header() {
                     >
                       Contato
                     </span>
-                    <ChevronRight 
+                    <ArrowRight 
                       className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" 
                     />
                   </Link>

@@ -376,7 +376,7 @@ export default function CapacitacaoPage() {
                 className="group relative px-16 py-6 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-2"
               >
                 <span className="relative z-10">Entre em contato agora</span>
-                <ArrowRight className="inline ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                {/* <ArrowRight className="inline ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" /> */}
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 transition-opacity" />
               </Link>
               <Link
