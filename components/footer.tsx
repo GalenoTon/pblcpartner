@@ -25,13 +25,24 @@ export default function Footer() {
               Infraestrutura e Tecnologia.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                <Linkedin className="h-5 w-5 md:h-6 md:w-6" />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                <Instagram className="h-5 w-5 md:h-6 md:w-6" />
-              </a>
-            </div>
+  {/* <a 
+    href="#" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-slate-400 hover:text-cyan-400 transition-colors"
+  >
+    <Linkedin className="h-5 w-5 md:h-6 md:w-6" />
+  </a> */}
+  <a 
+    href="https://www.instagram.com/public.partner/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-slate-400 hover:text-cyan-400 transition-colors"
+  >
+    <Instagram className="h-5 w-5 md:h-6 md:w-6" />
+    
+  </a>
+</div>
           </div>
 
           {/* Quick Links */}
