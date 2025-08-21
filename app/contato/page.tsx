@@ -124,7 +124,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] sm:min-h-[85vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+      <section className="relative min-h-[65vh] sm:min-h-[85vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
         {/* Fundo com vídeo e overlays */}
         <motion.div
           className="absolute inset-0 z-0"

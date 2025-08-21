@@ -56,7 +56,7 @@ export default function SobrePage() {
   return (
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
       {/* Hero Section - Melhorada responsividade */}
-      <section className="relative min-h-[85vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-16 sm:py-20 md:py-24">
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-16 sm:py-20 md:py-24">
         {/* Fundo com vídeo e overlays */}
         <motion.div
           className="absolute inset-0 z-0"

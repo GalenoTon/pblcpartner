@@ -266,7 +266,7 @@ export default function ServicosPage() {
   return (
     <main className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 min-h-screen overflow-x-hidden">
       {/* Hero Section - Redesenhada com mais impacto */}
-      <section className="relative min-h-[85vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
         {/* Fundo com vídeo e overlays */}
         <motion.div
           className="absolute inset-0 z-0"

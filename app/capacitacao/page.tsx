@@ -64,7 +64,7 @@ export default function CapacitacaoPage() {
   return (
     <div className="min-h-screen text-slate-900 overflow-x-hidden">
       {/* Hero */}
-      <section className="relative min-h-[85vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+      <section className="relative min-h-[65vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
         {/* Fundo com vídeo e overlays */}
         <motion.div
           className="absolute inset-0 z-0"

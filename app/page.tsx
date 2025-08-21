@@ -85,7 +85,7 @@ export default function HomePage() {
         <div className="container mx-auto relative z-10 text-center lg:text-left max-w-7xl">
           <div className="max-w-none lg:max-w-4xl fade-in-section opacity-0 transition-all duration-1000">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight pt-12 sm:pt-6 lg:pt-10 text-left">
-              <span className="block text-white">Transformamos</span>
+              <span className="block text-white ">Transformamos</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#49B5EA] via-[#8FD4F7] to-[#49B5EA]">
                 Desafios em Soluções
               </span>
