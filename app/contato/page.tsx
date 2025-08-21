@@ -188,7 +188,7 @@ export default function ContactPage() {
         </div>
 
         {/* Conteúdo */}
-        <div className="w-full max-w-7xl mx-auto relative z-10 text-center px-4 pt-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="w-full max-w-7xl mx-auto relative z-10 text-center px-4 pt-8 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           <motion.div
             initial="hidden"
             animate="visible"
